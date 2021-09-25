@@ -11,23 +11,39 @@
         }
     </style>
     <script>
+        var database = [{curret_ans:"B"}];
         function check(){
             let ans = document.getElementById("q1");
             let rs = document.getElementsByName("answer")
-            console.log(rs);
-
+            console.log(database);
+            var rsLength = rs.length;
+            for(var i =0;i < rsLength;i++)
+            {
+                if(rs[i].checked)
+                {
+                    var rsValue = rs[i].value;
+                    if(database[0].curret_ans == rsValue){
+                        alert("Correct!");
+                    }else{
+                        alert("Wrong!");
+                    }
+                    
+                }
+            }
         }
     </script>
 </head>
 <body>
-    <img id="q1" src="images/1.png" alt="">
-    <input type="radio" id="B" name="answer">
+    <div>
+    <img src="images/1.png" alt="">
+    </div>
+    <input type="radio" id="B" name="answer" value="B">
     <label for="B">B</label>
-    <input type="radio" id="P" name="answer">
+    <input type="radio" id="P" name="answer" value="P">
     <label for="P">P</label>
-    <input type="radio" id="M" name="answer">
+    <input type="radio" id="M" name="answer" value="M">
     <label for="M">M</label>
-    <input type="radio" id="F" name="answer">
+    <input type="radio" id="F" name="answer" value="F">
     <label for="F">F</label>
     <button onclick="check()">CHECK</button>
 </body>
