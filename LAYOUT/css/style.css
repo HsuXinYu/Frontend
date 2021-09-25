@@ -1,0 +1,159 @@
+/* nav */
+nav {
+    z-index: 999;
+    /* height: 60px; */
+}
+
+nav .logo {
+    font-size: 1.8em;
+}
+nav a {
+    transition: .4s;
+}
+nav a:hover {
+    color: gray;
+}
+/* header */
+
+header a{
+    background-image: url("../images/bg-1.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    padding-top: 400px;
+    padding-bottom: 400px;
+}
+header .content {
+    width: 400px;
+    top: 35%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+@media(min-width: 720px){
+    header .content {
+        /* background-color: #ccc; */
+        width: 400px;
+        top: 35%;
+        left: 25%;
+        transform: translateX(0);
+    }
+}
+
+/* subscribe */
+#subscribe {
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+#subscribe a {
+    height: 150px;
+}
+#subscribe span {
+    z-index: 99;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2.5rem;
+}
+/* activity */
+#activity {
+    padding-top: 35px;
+    padding-bottom: 35px;
+}
+/* new */
+#new {
+    padding-top: 35px;
+    padding-bottom: 35px;
+}
+.badge {
+    right: 15px;
+    top: 15px;
+}
+/* promotion */
+#promotion  {
+    padding-top: 35px;
+    padding-bottom: 35px;
+}
+#promotion img{
+    width: 40%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* blog */
+#blog {
+    padding-top: 35px;
+    padding-bottom: 35px;
+}
+hr {
+    border-bottom:solid 1px var(--light)
+}
+/* about */
+#about {
+    padding-top: 35px;
+    padding-bottom: 70px;
+}
+#about img {
+    width: 40%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+footer {
+    padding-top: 35px;
+    padding-bottom: 35px;
+}
+
+/* hover */
+.fx {
+    transition: .6s
+}
+.fx:hover {
+    transform: translateY(-8px);
+    box-shadow: 0px 4px 15px rgba(0,0,0,.2);
+}
+
+
+/* rwd nav */
+nav {
+    flex-direction: column;
+}
+@media(min-width: 720px){
+    nav {
+        flex-direction: row;
+    }
+}
+
+nav {
+    background-color: transparent;
+    transition: .3s;
+}
+nav.active {
+    background-color: #e9e9e9;
+}
+
+
+#gotop {
+    display: block;
+    width: 50px;
+    height: 50px;
+    position: fixed;
+    right: 15px;
+    bottom: 15px;
+    background-color: #222;
+    color: #fff;
+    line-height: 43px;
+    text-align: center;
+    border-radius: 50%;
+
+    transform: translateX(200%)rotate(180deg);
+    transition: .6s cubic-bezier(.55,.13,.56,1.74);
+}
+#gotop.active {
+    transform: translateX(0)rotate(0);
+}
+#gotop i {
+    vertical-align: middle;
+}

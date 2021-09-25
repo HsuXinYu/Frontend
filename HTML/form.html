@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" method="post">
+        <!-- 
+            method: post,get
+        -->
+        <table>
+            <tr>
+                <td>
+                    <label for="user">會員帳號</label>
+                </td>
+                <td>
+                    <input type="text" id="user" name="user">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="mail">電子郵件</label>
+                </td>
+                <td>
+                    <input type="email" id="mail" name="mail">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="pw">密碼</label>
+                </td>
+                <td>
+                    <input type="password" id="pw" name="pw">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="birth">生日</label>
+                </td>
+                <td>
+                    <input type="date" id="birth" name="birth">
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <label for="gender">性別</label>
+                </td>
+                <td>
+                    <input type="radio" id="male" name="gender" value="男">
+                    <label for="male">男</label>
+
+                    <input type="radio" id="female" name="gender" value="女">
+                    <label for="female">女</label>
+
+                    <input type="radio" id="unknown" name="gender" value="不提共">
+                    <label for="unknown">不提共</label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="country">國家</label>
+                </td>
+                <td>
+                    <select name="country" id="country">
+                        <option value="台灣">台灣</option>
+                        <option value="中國">中國</option>
+                        <option value="美國">美國</option>
+                        <option value="日本">日本</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input type="checkbox" id="subscribe" name="subscribe">
+                    <label for="subscribe">訂閱會員專函</label>
+                    <br>
+                    <small>每月初針對黃金、白金、鑽石會員固定發送，通知您當月最新會員等級、分級優惠、生日優惠等會員資訊。</small>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input type="checkbox" id="news" name="news">
+                    <label for="news">訂閱商品/活動訊息</label>
+                    <br>
+                    <small>不定期透過email通知最新商品活動及優惠資訊。</small>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="content">備註</label>
+                </td>
+                <td>
+                    <textarea name="content" id="content" cols="40" rows="10"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input type="submit" value="送出">
+                    <input type="reset" value="清除">
+                    <input type="button" value="自訂義">
+
+                    <button type="submit">送出</button>
+                    <button type="reset">重置</button>
+                    <button type="button">自訂義</button>   
+                </td>
+            </tr>
+        </table>
+        
+        
+
+        
+       
+    </form>
+</body>
+</html>

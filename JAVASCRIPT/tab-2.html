@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI';
+        }
+        .tab {
+            width: 600px;
+            margin: auto;
+            position: relative;
+        }
+        .tab-nav {
+            display: flex;
+            background-color: #e4e4e4;
+            position: relative;
+            z-index: 7;
+        }
+        .tab-link {
+            text-decoration: none;
+            color: #222;
+            padding: 10px 15px;
+
+            transition: .5s;
+        }
+        .tab-link.active {
+            background-color: #70d5fd;
+        }
+        .tab-panel {
+            padding: 15px;
+            background-color: #70d5fd;
+
+            position: absolute;
+            opacity: 0;
+            z-index: -1;
+            transform: translateY(-30px);
+            transition: .5s;
+        }
+        .tab-panel.active {
+            opacity: 1;
+            z-index: 6;
+            transform: translateY(0px);
+
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="tab">
+        <div class="tab-nav">
+            <a href="#tab-1" data-panel="#tab-1" class="tab-link active">tab 1</a>
+            <a href="#tab-2" data-panel="#tab-2" class="tab-link">tab 2</a>
+            <a href="#tab-3" data-panel="#tab-3" class="tab-link">tab 3</a>
+        </div>
+        <div class="tab-panel active" id="tab-1">
+            <h3>title 1</h3>
+            <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eos dolore porro iste et hic, laudantium quae atque facilis? Error, reiciendis! Commodi in earum saepe quos mollitia animi voluptate, laboriosam asperiores!
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eos dolore porro iste et hic, laudantium quae atque facilis? Error, reiciendis! Commodi in earum saepe quos mollitia animi voluptate, laboriosam asperiores!
+            </p>
+        </div>
+        <div class="tab-panel" id="tab-2">
+            <h3>title 2</h3>
+            <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eos dolore porro iste et hic, laudantium quae atque facilis? Error, reiciendis! Commodi in earum saepe quos mollitia animi voluptate, laboriosam asperiores!
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eos dolore porro iste et hic, laudantium quae atque facilis? Error, reiciendis! Commodi in earum saepe quos mollitia animi voluptate, laboriosam asperiores!
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eos dolore porro iste et hic, laudantium quae atque facilis? Error, reiciendis! Commodi in earum saepe quos mollitia animi voluptate, laboriosam asperiores!
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eos dolore porro iste et hic, laudantium quae atque facilis? Error, reiciendis! Commodi in earum saepe quos mollitia animi voluptate, laboriosam asperiores!
+            </p>
+        </div>
+        <div class="tab-panel" id="tab-3">
+            <h3>title 3</h3>
+            <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eos dolore porro iste et hic, laudantium quae atque facilis? Error, reiciendis! Commodi in earum saepe quos mollitia animi voluptate, laboriosam asperiores!
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eos dolore porro iste et hic, laudantium quae atque facilis? Error, reiciendis! Commodi in earum saepe quos mollitia animi voluptate, laboriosam asperiores!
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eos dolore porro iste et hic, laudantium quae atque facilis? Error, reiciendis! Commodi in earum saepe quos mollitia animi voluptate, laboriosam asperiores!
+            </p>
+            
+        </div>
+    </div>
+    <script>
+        let tabLinks = document.querySelectorAll('.tab-link');
+        tabLinks.forEach(tabLink => {
+            tabLink.onclick = event => {
+                for(let tabLink of tabLinks){
+                    tabLink.classList.remove('active');
+                }
+                event.target.classList.add('active');
+            
+                let dataPanel = event.target.dataset.panel;
+                
+                
+                document.querySelectorAll('.tab-panel').forEach(tabPanel=>{
+                    tabPanel.classList.remove('active');
+
+                })
+                document.querySelector(dataPanel).classList.add('active');
+            }
+        })
+    </script>
+</body>
+</html>

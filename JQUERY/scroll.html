@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js" integrity="sha512-Eak/29OTpb36LLo2r47IpVzPBLXnAMPAVypbSZiZ4Qkf8p/7S/XRG5xp7OKWPPYfJT6metI+IORkR5G8F900+g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.compat.min.css" integrity="sha512-b42SanD3pNHoihKwgABd18JUZ2g9j423/frxIP5/gtYgfBz/0nDHGdY/3hi+3JwhSckM3JLklQ/T6tJmV7mZEw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI';
+        }
+        nav {
+            width: 100%;
+            padding-top: 15px;
+            padding-bottom: 15px;
+            background-color: #222;
+            text-align: center;
+            position: fixed;
+            transition: .5s;
+
+        }
+        nav.active{
+            background-color: #ffb81e;
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+        nav.active a {
+            color: #000;
+        }
+        nav.active a.active {
+            background-color: #8b02ad;
+            color: #fff;
+        }
+        nav a {
+            display: inline-block;
+            padding:8px 15px;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: .4s;
+        }
+        nav a.active {
+            background-color: #fff;
+            color: #000;
+        }
+        .container {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        h2 {
+            font-size: 5em;
+            text-transform: uppercase;
+        }
+        #about {background-color: #FF75A0;}
+        #service {background-color: #EAFFD0;}
+        #product {background-color: #FCE38A;}
+        #contact {background-color: #95E1D3;}
+        #gotop {
+            display: block;
+            width: 50px;
+            height: 50px;
+            position: fixed;
+            right: 15px;
+            bottom: 15px;
+            background-color: #222;
+            color: #fff;
+            line-height: 43px;
+            text-align: center;
+            border-radius: 50%;
+
+            transform: translateX(200%)rotate(180deg);
+            transition: .6s cubic-bezier(.55,.13,.56,1.74);
+        }
+        #gotop.active {
+            transform: translateX(0)rotate(0);
+        }
+        #gotop i {
+            vertical-align: middle;
+        }
+        h2 {
+            background-color: #ccc;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="#" data-target="#about" class="active">About</a>
+        <a href="#" data-target="#service">Service</a>
+        <a href="#" data-target="#product">Product</a>
+        <a href="#" data-target="#contact">Contact</a>
+    </nav>    
+    <div id="about" class="container">
+        <h2>
+            <span class="wow fadeIn" data-wow-delay="0s">A</span>
+            <span class="wow fadeIn" data-wow-delay=".3s">b</span>
+            <span class="wow fadeIn" data-wow-delay=".6s">o</span>
+            <span class="wow fadeIn" data-wow-delay=".9s">u</span>
+            <span class="wow fadeIn" data-wow-delay="1.2s">t</span>
+        </h2>
+    </div>
+    <div id="service" class="container">
+        <h2 class="wow fadeInLeft" data-wow-offset="100" data-wow-duration="1.5s">service</h2>
+    </div>
+    <div id="product" class="container">
+        <h2 class="wow heartBeat" data-wow-iteration="infinite">product</h2>
+    </div>
+    <div id="contact" class="container">
+        <h2 class="wow fadeInUp">contact</h2>
+    </div>
+    <a href="#" id="gotop">
+        <i class="fas fa-chevron-up fa-2x"></i>
+    </a>
+    <script>
+        new WOW().init();
+        $(function(){
+            
+            $('nav').find('a').click(function(){
+                let speed = 600;
+                let target = $(this).data('target');
+                let h = $(target).offset().top;
+                console.log(target,h);
+                $('html,body').animate({
+                    scrollTop:h
+                },speed);
+
+                // $('nav').find('a').removeClass('active');
+                // $(this).addClass('active');
+
+                return false;
+            })
+            $('#gotop').click(function(e){
+                let speed = 1000;
+                e.preventDefault();
+                $('html,body').animate({
+                    scrollTop: 0
+                },speed);
+                // return false;
+                
+            })
+            // $('#gotop').hide();
+            $(window).scroll(function(){
+                let h = $(window).scrollTop();
+                console.log(h);
+                if(h > 600){
+                    // $('#gotop').fadeIn();
+                    $('#gotop').addClass('active')
+                    $('nav').addClass('active');
+                }else{
+                    // $('#gotop').fadeOut();
+                    $('#gotop').removeClass('active')
+                    $('nav').removeClass('active');
+
+                }
+                $('nav').find('a').each(function(){
+                    let target = $(this).data('target');
+                    let offset = $(target).offset().top;
+                    // console.log(offset);
+                    if(h > offset - 200){
+                        $('nav').find('a').removeClass('active');
+                        $(this).addClass('active');
+                    }
+                });
+            });
+        })
+    </script>
+</body>
+</html>

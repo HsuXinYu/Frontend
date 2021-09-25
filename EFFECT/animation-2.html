@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 150px;
+            height: 150px;
+            background-color: #4983ff;
+
+            /* animation: move 3s; */
+            /* animation-name: move; */
+            /* animation-duration: 2s; */
+            /* animation-delay: 0s; */
+            /* animation-fill-mode:forwards; */
+            /* animation-direction: alternate; */
+            /* normal, reverse, alternate, alternate-reverse */
+            /* animation-iteration-count: infinite; */
+
+            /* animation-timing-function: ; */
+            /* ease, ease-in, ease-out, ease-in-out, linear */
+            animation: move 2s 0s forwards alternate infinite;
+
+            /* animation-play-state: paused; */
+        }
+        @keyframes move {
+            0% {}
+            33% {transform: translate(300px ,0)rotate(90deg);}
+            66% {transform: translate(300px ,300px)rotate(190deg);}
+            100% {transform: translate(0,300px)rotate(270deg);}
+            /* 100% {transform: translate(0,0)rotate(360deg);} */
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>

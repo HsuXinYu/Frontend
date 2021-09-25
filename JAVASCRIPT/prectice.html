@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: aquamarine;
+        }
+    </style>
+    <script>
+        function check(){
+            let ans = document.getElementById("q1");
+            let rs = document.getElementsByName("answer")
+            console.log(rs);
+
+        }
+    </script>
+</head>
+<body>
+    <img id="q1" src="images/1.png" alt="">
+    <input type="radio" id="B" name="answer">
+    <label for="B">B</label>
+    <input type="radio" id="P" name="answer">
+    <label for="P">P</label>
+    <input type="radio" id="M" name="answer">
+    <label for="M">M</label>
+    <input type="radio" id="F" name="answer">
+    <label for="F">F</label>
+    <button onclick="check()">CHECK</button>
+</body>
+</html>
