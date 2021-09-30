@@ -11,49 +11,33 @@
         }
     </style>
     <script>
-        var database = [{curret_ans:"B"},{curret_ans:"P"}];
-
-        function myFunction(value, index, array) {
-            return value == -1;
-        }
-        function sum(t,v){
-            return t+v;
-        }
-        function check(){
-            var responses=[];
-            for(var i =0;i<2;i++){
-            responses[i]=check_question(i);
-            }
-            console.log(responses);
-            if(responses.some(myFunction)){
-                alert("You didn't choose");
-            }else{
-                var total = responses.reduce(sum);
-                var score = total/2*100; // %
-                alert(score);
-
-            }
-        }
+        var database = [{currect_ans:"B"}, {currect_ans:"P"}];
         function check_question(element_id){
-            let rs1 = document.getElementsByName(String(element_id));
-            var rs1Length = rs1.length;
+            let rs = document.getElementsByName(String(element_id))
+            var rsLength = rs.length;
             var select = -1;
-            var response="";
-            for(var i =0;i < rs1Length;i++){
-                if(rs1[i].checked){
+            var response = '';
+            for(var i =0;i < rsLength;i++){
+                if(rs[i].checked){
                     select = 1;
-                    var rs1Value = rs1[i].value;
-                    if(database[element_id].curret_ans == rs1Value){
-                        response = 1;
+                    var rsValue = rs[i].value;
+                    if(database[element_id].currect_ans == rsValue){
+                        response = "Correct!";
                     }else{
-                        response = 0;
+                        response = "Wrong!";
                     }   
                 }
             }
             if(select < 0){
-                response = -1;
+                response = "You didn't choose!";
             }
             return response;
+        }
+        function check(){
+            response1 = check_question(0);
+            response2 = check_question(1);
+            alert(response1 + " " + response2);
+            // score n alert msg
         }
     </script>
 </head>
