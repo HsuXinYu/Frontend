@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: aquamarine;
+        }
+    </style>
+    <script>
+        var database = [{curret_ans:"B"},{curret_ans:"P"}];
+
+        function myFunction(value, index, array) {
+            return value == -1;
+        }
+        function sum(t,v){
+            return t+v;
+        }
+        function check(){
+            var responses=[];
+            for(var i =0;i<2;i++){
+            responses[i]=check_question(i);
+            }
+            console.log(responses);
+            if(responses.some(myFunction)){
+                alert("You didn't choose");
+            }else{
+                var total = responses.reduce(sum);
+                var score = total/2*100; // %
+                alert(score);
+
+            }
+        }
+        function check_question(element_id){
+            let rs1 = document.getElementsByName(String(element_id));
+            var rs1Length = rs1.length;
+            var select = -1;
+            var response="";
+            for(var i =0;i < rs1Length;i++){
+                if(rs1[i].checked){
+                    select = 1;
+                    var rs1Value = rs1[i].value;
+                    if(database[element_id].curret_ans == rs1Value){
+                        response = 1;
+                    }else{
+                        response = 0;
+                    }   
+                }
+            }
+            if(select < 0){
+                response = -1;
+            }
+            return response;
+        }
+    </script>
+</head>
+<body>
+    <img src="images/1.png" alt="">
+    <input type="radio" id="B" name="0" value="B">
+    <label for="B">B</label>
+    <input type="radio" id="P" name="0" value="P">
+    <label for="P">P</label>
+    <input type="radio" id="M" name="0" value="M">
+    <label for="M">M</label>
+    <input type="radio" id="F" name="0" value="F">
+    <label for="F">F</label>
+    <img src="images/2.png" alt="">
+    <input type="radio" id="B" name="1" value="B">
+    <label for="B">B</label>
+    <input type="radio" id="P" name="1" value="P">
+    <label for="P">P</label>
+    <input type="radio" id="M" name="1" value="M">
+    <label for="M">M</label>
+    <input type="radio" id="F" name="1" value="F">
+    <label for="F">F</label>
+    <button onclick="check()">CHECK</button>
+</body>
+</html>
