@@ -1,81 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        body{
+        body {
             background-color: aquamarine;
+        }
+
+        div {
+            text-align: center;
         }
     </style>
     <script>
-        var database = [{curret_ans:"B"},{curret_ans:"P"}];
-
-        function myFunction(value, index, array) {
-            return value == -1;
+        var database = [{ curret_ans: "B" }, { curret_ans: "B" }, { curret_ans: "B" }, { curret_ans: "B" }, { curret_ans: "B" }, { curret_ans: "B" }];
+        // function myFunction(value) {
+        //     return value == -1;
+        // }
+        function sum(t, v) {
+            return t + v;
         }
-        function sum(t,v){
-            return t+v;
-        }
-        function check(){
-            var responses=[];
-            for(var i =0;i<2;i++){
-            responses[i]=check_question(i);
+        function check() {
+            var responses = [];
+            for (var i = 0; i < 6; i++) {
+                responses[i] = check_question(i);
             }
             console.log(responses);
-            if(responses.some(myFunction)){
+            if (responses.some(function(value){return value == -1;})) {
                 alert("You didn't choose");
-            }else{
+            } else {
                 var total = responses.reduce(sum);
-                var score = total/2*100; // %
+                var score = total / 6 * 100; // %
                 alert(score);
 
             }
         }
-        function check_question(element_id){
+        function check_question(element_id) {
             let rs1 = document.getElementsByName(String(element_id));
             var rs1Length = rs1.length;
+            console.log(rs1Length);
             var select = -1;
-            var response="";
-            for(var i =0;i < rs1Length;i++){
-                if(rs1[i].checked){
+            var response = "";
+            for (var i = 0; i < rs1Length; i++) {
+                if (rs1[i].checked) {
                     select = 1;
                     var rs1Value = rs1[i].value;
-                    if(database[element_id].curret_ans == rs1Value){
+                    if (database[element_id].curret_ans == rs1Value) {
                         response = 1;
-                    }else{
+                    } else {
                         response = 0;
-                    }   
+                    }
                 }
             }
-            if(select < 0){
+            if (select < 0) {
                 response = -1;
             }
             return response;
         }
     </script>
 </head>
+
 <body>
-    <img src="images/1.png" alt="">
-    <input type="radio" id="B" name="0" value="B">
-    <label for="B">B</label>
-    <input type="radio" id="P" name="0" value="P">
-    <label for="P">P</label>
-    <input type="radio" id="M" name="0" value="M">
-    <label for="M">M</label>
-    <input type="radio" id="F" name="0" value="F">
-    <label for="F">F</label>
-    <img src="images/2.png" alt="">
-    <input type="radio" id="B" name="1" value="B">
-    <label for="B">B</label>
-    <input type="radio" id="P" name="1" value="P">
-    <label for="P">P</label>
-    <input type="radio" id="M" name="1" value="M">
-    <label for="M">M</label>
-    <input type="radio" id="F" name="1" value="F">
-    <label for="F">F</label>
+    <div>
+        <p>Q1</p>
+        <img src="images/1.png" alt="">
+    </div>
+    <div>
+        <input type="radio" id="B" name="0" value="B">
+        <label for="B">B</label>
+        <input type="radio" id="P" name="0" value="P">
+        <label for="P">P</label>
+        <input type="radio" id="M" name="0" value="M">
+        <label for="M">M</label>
+        <input type="radio" id="F" name="0" value="F">
+        <label for="F">F</label>
+    </div>
+    <div>
+        <p>Q2</p>
+        <img src="images/1.png" alt="">
+    </div>
+    <div>
+        <input type="radio" id="B" name="1" value="B">
+        <label for="B">B</label>
+        <input type="radio" id="P" name="1" value="P">
+        <label for="P">P</label>
+        <input type="radio" id="M" name="1" value="M">
+        <label for="M">M</label>
+        <input type="radio" id="F" name="1" value="F">
+        <label for="F">F</label>
+    </div>
+    <div>
+        <p>Q3</p>
+        <img src="images/1.png" alt="">
+    </div>
+    <div>
+        <input type="radio" id="B" name="2" value="B">
+        <label for="B">B</label>
+        <input type="radio" id="P" name="2" value="P">
+        <label for="P">P</label>
+        <input type="radio" id="M" name="2" value="M">
+        <label for="M">M</label>
+        <input type="radio" id="F" name="2" value="F">
+        <label for="F">F</label>
+    </div>
+    <div>
+        <p>Q4</p>
+        <img src="images/1.png" alt="">
+    </div>
+    <div>
+        <input type="radio" id="B" name="3" value="B">
+        <label for="B">B</label>
+        <input type="radio" id="P" name="3" value="P">
+        <label for="P">P</label>
+        <input type="radio" id="M" name="3" value="M">
+        <label for="M">M</label>
+        <input type="radio" id="F" name="3" value="F">
+        <label for="F">F</label>
+    </div>
+    <div>
+        <p>Q5</p>
+        <img src="images/1.png" alt="">
+    </div>
+    <div>
+        <input type="radio" id="B" name="4" value="B">
+        <label for="B">B</label>
+        <input type="radio" id="P" name="4" value="P">
+        <label for="P">P</label>
+        <input type="radio" id="M" name="4" value="M">
+        <label for="M">M</label>
+        <input type="radio" id="F" name="4" value="F">
+        <label for="F">F</label>
+    </div>
+    <div>
+        <p>Q6</p>
+        <img src="images/1.png" alt="">
+    </div>
+    <div>
+        <input type="radio" id="B" name="5" value="B">
+        <label for="B">B</label>
+        <input type="radio" id="P" name="5" value="P">
+        <label for="P">P</label>
+        <input type="radio" id="M" name="5" value="M">
+        <label for="M">M</label>
+        <input type="radio" id="F" name="5" value="F">
+        <label for="F">F</label>
+    </div>
     <button onclick="check()">CHECK</button>
+
 </body>
+
 </html>
