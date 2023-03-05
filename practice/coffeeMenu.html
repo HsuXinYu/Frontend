@@ -9,20 +9,21 @@
       body {
         background-image: url(https://cdn.freecodecamp.org/curriculum/css-cafe/beans.jpg);
         font-family: sans-serif;
+        padding: 20px;
       }
-      .established {
-        font-style: italic;
+      footer {
+        font-size: 14px;
       }
-      .menu {
-        width: 80%;
-        background-color: burlywood;
+      img {
+        display: block;
         margin-left: auto;
         margin-right: auto;
-        padding: 20px;
-        max-width: 500px;
+        margin-top: -25px;
       }
       h1 {
         font-size: 40px;
+        margin-top: 0px;
+        margin-bottom: 15px;
       }
       h2 {
         font-size: 30px;
@@ -36,6 +37,35 @@
       p {
         text-align: center;
       }
+      hr {
+        height: 2px;
+        background-color: brown;
+        border-color: brown;
+      }
+      a {
+        color: black;
+      }
+      a:visited {
+        color: black;
+      }
+      a:hover {
+        color: brown;
+      }
+
+      a:active {
+        color: brown;
+      }
+      .established {
+        font-style: italic;
+      }
+      .menu {
+        width: 80%;
+        background-color: burlywood;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 20px;
+        max-width: 500px;
+      }
       .flavor,
       .dessert {
         text-align: left;
@@ -47,6 +77,15 @@
       }
       .item p {
         display: inline-block;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        font-size: 18px;
+      }
+      .bottom-line {
+        margin-top: 25px;
+      }
+      .address {
+        margin-bottom: 5px;
       }
     </style>
   </head>
@@ -55,8 +94,13 @@
       <main>
         <h1>CAMPER CAFE</h1>
         <p class="established">Est. 2020</p>
+        <hr />
         <section>
           <h2>Coffee</h2>
+          <img
+            src="https://cdn.freecodecamp.org/curriculum/css-cafe/coffee.jpg"
+            alt="coffee icon"
+          />
           <article class="item">
             <p class="flavor">French Vanilla</p>
             <p class="price">3.00</p>
@@ -80,6 +124,10 @@
         </section>
         <section>
           <h2>Desserts</h2>
+          <img
+            src="https://cdn.freecodecamp.org/curriculum/css-cafe/pie.jpg"
+            alt="pie icon"
+          />
           <article class="item">
             <p class="dessert">Donut</p>
             <p class="price">1.50</p>
@@ -98,9 +146,10 @@
           </article>
         </section>
       </main>
+      <hr class="bottom-line" />
       <footer>
         <p><a href="https://www.freecodecamp.org">Visit our website</a></p>
-        <p>123 Free Code Camp Drive</p>
+        <p class="address">123 Free Code Camp Drive</p>
       </footer>
     </div>
   </body>
