@@ -1,0 +1,14 @@
+body {
+  background-image: url(../images/background.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.container {
+  background-color: rgba(105, 114, 198, 0.75);
+  margin: auto;
+  width: 75%;
+}
+.header {
+  background-color: rgb(35, 35, 214, 1);
+  text-align: center;
+}
