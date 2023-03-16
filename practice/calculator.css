@@ -5,16 +5,16 @@
 }
 .calculator_display {
   background-color: gray;
-  width: 198px;
+  width: 398px;
   border: solid 1px;
   text-align: right;
 }
 .calculator_keys {
   display: grid;
-  grid-template-columns: repeat(4, 50px);
+  grid-template-columns: repeat(4, 100px);
 }
 button {
-  width: 50px;
+  width: 100px;
 }
 .key_equal {
   grid-column-start: 4;
