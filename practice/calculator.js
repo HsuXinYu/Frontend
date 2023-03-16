@@ -32,6 +32,8 @@ keys.addEventListener("click", (e) => {
     if (action === "decimal") {
       if (!displayedNum.includes(".")) {
         display.textContent = displayedNum + ".";
+      } else if (previousKeyType === "number") {
+        display.textContent = displayedNum + ".";
       } else if (previousKeyType === "operator") {
         display.textContent = displayedNum + "0.";
       }
