@@ -9,6 +9,7 @@ keys.addEventListener("click", (e) => {
     const keyContent = key.textContent;
     const displayedNum = display.textContent;
     const previousKeyType = calculator.dataset.previousKeyType;
+    const isdecimalpresent = calculator.dataset.isdecimalpresent;
 
     if (
       !action ||
@@ -26,27 +27,29 @@ keys.addEventListener("click", (e) => {
         calculator.dataset.previousKeyType = "number";
       } else {
         calculator.dataset.previousKeyType = "operator";
+        calculator.dataset.isdecimalpresent = "0";
       }
     }
 
-    if (action === "decimal") {
-      if (!displayedNum.includes(".")) {
-        display.textContent = displayedNum + ".";
-      } else if (previousKeyType === "number") {
+    if (action === "decimal" && isdecimalpresent === "0") {
+      if (!displayedNum.includes(".") || previousKeyType === "number") {
         display.textContent = displayedNum + ".";
       } else if (previousKeyType === "operator") {
         display.textContent = displayedNum + "0.";
       }
       calculator.dataset.previousKey = "decimal";
+      calculator.dataset.isdecimalpresent = "1";
     }
 
     if (action === "clear") {
       display.textContent = "0";
       calculator.dataset.previousKeyType = "clear";
+      calculator.dataset.isdecimalpresent = "0";
     }
 
     if (action === "calculate") {
       display.textContent = eval(display.textContent);
+      calculator.dataset.isdecimalpresent = "0";
     }
   }
 });
