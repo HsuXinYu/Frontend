@@ -6,6 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
+      /* 水平置中
+        1. 區塊: margin:auto
+        2. 文字: text-align: center
+        3. inline-block: text-align:center (外層必須是區塊block)
+        4. justify-content:center */
+
       .container {
         width: 800px;
         height: 600px;
@@ -16,7 +22,7 @@
       .box {
         width: 50%;
         background-color: #7afdfd;
-        /* margin: auto; */
+        margin: auto;
       }
       a {
         background-color: #f00;
@@ -44,12 +50,5 @@
       </div>
       <a href="#">LINK</a>
     </div>
-    <!-- 
-        水平置中
-        1. 區塊: margin:auto
-        2. 文字: text-align: center
-        3. inline-block: text-align:center (外層必須是區塊block)
-        4. justify-content:center
-     -->
   </body>
 </html>
