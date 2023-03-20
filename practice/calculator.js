@@ -11,24 +11,24 @@ keys.addEventListener("click", (e) => {
     const previousKeyType = calculator.dataset.previousKeyType;
     const isdecimalpresent = calculator.dataset.isdecimalpresent;
 
-    if (
-      !action ||
-      action === "add" ||
-      action === "subtract" ||
-      action === "multiply" ||
-      action === "divide"
-    ) {
+    if (!action) {
       if (displayedNum === "0") {
         display.textContent = keyContent;
       } else {
         display.textContent = displayedNum + keyContent;
-      }
-      if (!action) {
         calculator.dataset.previousKeyType = "number";
-      } else {
-        calculator.dataset.previousKeyType = "operator";
-        calculator.dataset.isdecimalpresent = "0";
       }
+    }
+    if (
+      calculator.dataset.previousKeyType === "number" &&
+      (action === "add" ||
+        action === "subtract" ||
+        action === "multiply" ||
+        action === "divide")
+    ) {
+      display.textContent = displayedNum + keyContent;
+      calculator.dataset.previousKeyType = "operator";
+      calculator.dataset.isdecimalpresent = "0";
     }
 
     if (action === "decimal" && isdecimalpresent === "0") {

@@ -9,9 +9,11 @@ body {
   width: 75%;
 }
 .header {
-  background-color: rgb(35, 35, 214, 1);
+  background-color: rgb(73, 81, 145);
   text-align: center;
+  padding: 10px;
 }
 main {
   margin: 0px 400px 0px 400px;
+  padding: 20px 0px;
 }
