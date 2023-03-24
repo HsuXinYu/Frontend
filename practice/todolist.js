@@ -40,3 +40,15 @@ for (var i = 0; i < close.length; i++) {
     div.style.display = "none";
   };
 }
+
+var list = document.querySelector("ul");
+list.addEventListener(
+  "click",
+  function (ev) {
+    //target.tagName一律大寫
+    if (ev.target.tagName === "LI") {
+      ev.target.classList.toggle("checked");
+    }
+  },
+  false
+);
