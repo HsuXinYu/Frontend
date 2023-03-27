@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background-color: aquamarine;
+      }
+    </style>
+    <script>
+      var database = [{ currect_ans: "B" }, { currect_ans: "P" }];
+      function check_question(element_id) {
+        let rs = document.getElementsByName(String(element_id));
+        var rsLength = rs.length;
+        var select = -1;
+        var response = "";
+        for (var i = 0; i < rsLength; i++) {
+          if (rs[i].checked) {
+            select = 1;
+            var rsValue = rs[i].value;
+            if (database[element_id].currect_ans == rsValue) {
+              response = "Correct!";
+            } else {
+              response = "Wrong!";
+            }
+          }
+        }
+        if (select < 0) {
+          response = "You didn't choose!";
+        }
+        return response;
+      }
+      function check() {
+        response1 = check_question(0);
+        response2 = check_question(1);
+        alert(response1 + " " + response2);
+        // score n alert msg
+      }
+    </script>
+  </head>
+  <body>
+    <img src="images/1.png" alt="" />
+    <input type="radio" id="B" name="0" value="B" />
+    <label for="B">B</label>
+    <input type="radio" id="P" name="0" value="P" />
+    <label for="P">P</label>
+    <input type="radio" id="M" name="0" value="M" />
+    <label for="M">M</label>
+    <input type="radio" id="F" name="0" value="F" />
+    <label for="F">F</label>
+    <img src="images/2.png" alt="" />
+    <input type="radio" id="B" name="1" value="B" />
+    <label for="B">B</label>
+    <input type="radio" id="P" name="1" value="P" />
+    <label for="P">P</label>
+    <input type="radio" id="M" name="1" value="M" />
+    <label for="M">M</label>
+    <input type="radio" id="F" name="1" value="F" />
+    <label for="F">F</label>
+    <button onclick="check()">CHECK</button>
+  </body>
+</html>
