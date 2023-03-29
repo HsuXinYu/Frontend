@@ -1,6 +1,18 @@
 * {
   box-sizing: border-box;
 }
+body {
+  background-color: #dde693;
+}
+.container {
+  width: 50%;
+  position: absolute;
+  top: 20%;
+  left: 25%;
+}
+#myDIV {
+  margin: 20px;
+}
 ul {
   margin: 0;
   padding: 0;
@@ -23,12 +35,13 @@ ul li:hover {
   position: absolute;
   right: 0;
   top: 0;
+  font-size: 2rem;
 }
 .checked {
   background-color: #888;
-  text-decoration: line-through;
+  text-decoration: line-through white;
 }
-.checked:before {
+.checked:after {
   content: "";
   position: absolute;
   border-color: #fff;
