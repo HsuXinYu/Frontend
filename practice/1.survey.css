@@ -5,11 +5,13 @@ body {
 }
 .container {
   background-color: rgba(105, 114, 198, 0.75);
+  border-radius: 25px;
   margin: auto;
   width: 75%;
 }
 .header {
   background-color: rgb(73, 81, 145);
+  border-radius: 25px;
   text-align: center;
   padding: 10px;
 }
