@@ -14,6 +14,7 @@ keys.addEventListener("click", (e) => {
     if (!action) {
       if (displayedNum === "0") {
         display.textContent = keyContent;
+        calculator.dataset.previousKeyType = "number";
       } else {
         display.textContent = displayedNum + keyContent;
         calculator.dataset.previousKeyType = "number";
