@@ -127,6 +127,7 @@ function getRating(watchList) {
   console.log(fil);
 
   let sum = fil.reduce((sum, item) => sum + item, 0);
+
   let averageRating = sum / fil.length;
 
   // 只修改這一行上面的代碼
@@ -134,3 +135,16 @@ function getRating(watchList) {
 }
 
 console.log(getRating(watchList));
+
+function urlSlug(title) {
+  // console.log(title.toLowerCase().split(" "))
+  let arr = title.toLowerCase().split(/\W/);
+  let newtitle = arr
+    .filter((item) => item)
+    .map((item) => "-" + item)
+    .join("");
+  // console.log(newtitle.slice(1));
+  return newtitle.slice(1);
+}
+// 只修改這一行上面的代碼
+console.log(urlSlug(" Winter Is  Coming"));
