@@ -5,9 +5,7 @@
 //     return 'test';
 // }
 
-
-
-//函式表達式
+//函式表達式\表示式\運算式
 // let test2 = function(){
 //     return 'test2';
 // }
@@ -32,7 +30,6 @@
 // console.log(dollar(100,28));
 
 //箭頭函式
-
 // let test = function(){
 //     return 'test';
 // }
@@ -45,15 +42,14 @@
 //     return a;
 // }
 
-
 //動作只有return時，可以省略大括號與return
-let test = a => a;
+let test = (a) => a;
 
 // let square = (x,y) => {
 //     return x*y;
 // }
 
-let square = (x,y) => x*y;
+let square = (x, y) => x * y;
 
 console.log(test(123));
-console.log(square(111,222));
+console.log(square(111, 222));

@@ -1,57 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
-        .gallery {
-            width: 600px;
-            margin: auto;
-            border: 1px solid #000;
-        }
-        .thumbs {
-            display: flex;
-        }
-        .thumb {
-            width: calc(100% / 6);
-            cursor: pointer;
-            opacity: .3;
-            transition: .5s;
-        }
-        .thumb.active {
-            opacity: 1;
-        }
+      .gallery {
+        width: 600px;
+        margin: auto;
+        border: 1px solid #000;
+      }
+      .thumbs {
+        display: flex;
+      }
+      .thumb {
+        width: calc(100% / 6);
+        cursor: pointer;
+        opacity: 0.3;
+        transition: 0.5s;
+      }
+      .thumb.active {
+        opacity: 1;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <div class="gallery">
-        <img src="images/iphone-12-black-select-2020.png" class="main">
-        <div class="thumbs">
-            <img src="images/iphone-12-black-select-2020.png" class="thumb active">
-            <img src="images/iphone-12-blue-select-2020.png" class="thumb">
-            <img src="images/iphone-12-white-select-2020.png" class="thumb">
-            <img src="images/iphone-12-red-select-2020.png" class="thumb">
-            <img src="images/iphone-12-green-select-2020.png" class="thumb">
-            <img src="images/iphone-12-purple-select-2021.png" class="thumb">
-        </div>
+      <img src="images/iphone-12-black-select-2020.png" class="main" />
+      <div class="thumbs">
+        <img
+          src="images/iphone-12-black-select-2020.png"
+          class="thumb active"
+        />
+        <img src="images/iphone-12-blue-select-2020.png" class="thumb" />
+        <img src="images/iphone-12-white-select-2020.png" class="thumb" />
+        <img src="images/iphone-12-red-select-2020.png" class="thumb" />
+        <img src="images/iphone-12-green-select-2020.png" class="thumb" />
+        <img src="images/iphone-12-purple-select-2021.png" class="thumb" />
+      </div>
     </div>
     <script>
-        let thumbs = document.querySelectorAll('.thumb');
-        thumbs.forEach(t => {
-            t.onclick = e => {
-                let newImg = e.target.getAttribute('src');
-                console.log(newImg);
-                document.querySelector('.main').setAttribute('src',newImg);
+      let thumbs = document.querySelectorAll(".thumb");
+      thumbs.forEach((t) => {
+        t.onclick = (e) => {
+          let newImg = e.target.getAttribute("src");
+          console.log(newImg);
+          document.querySelector(".main").setAttribute("src", newImg);
 
-                for(let t of thumbs){
-                    t.classList.remove('active');
-                }
-                e.target.classList.add('active');
-                
-            }
-        })
+          for (let t of thumbs) {
+            t.classList.remove("active");
+          }
+          e.target.classList.add("active");
+        };
+      });
     </script>
-</body>
+  </body>
 </html>
