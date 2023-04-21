@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Vue Mastery</title>
+    <!-- Import Styles -->
+    <link rel="stylesheet" href="css/cart-3.css" />
+    <!-- Import Vue.js -->
+    <script src="https://unpkg.com/vue@3.0.11/dist/vue.global.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <h1>hello</h1>
+      <div class="nav-var"></div>
+      <div class="product-display">
+        <div class="product-container">
+          <div class="product-image">
+            <!-- v-bind:src -->
+            <img :src="image" alt="blue" />
+          </div>
+          <div class="product-info">
+            <h1>{{product}}</h1>
+            <!-- v-else is not necessary, "v-show" like toggle -->
+            <p v-if="inventory > 10">In Stock</p>
+            <p v-else-if="inventory <=10 && inventory>0">Almost sold Out</p>
+            <p v-else>Out of Stock</p>
+            <ul>
+              <!-- for loop, detail is alias, details is collection-->
+              <li v-for="detail in details">{{detail}}</li>
+            </ul>
+            <ul>
+              <li v-for="(size, index) in sizes" :key="index">{{ size }}</li>
+            </ul>
+            <div v-for="variant in variants" :key="variant.id">
+              {{ variant.color }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Import Js -->
+    <script src="js/cart-3.js"></script>
+
+    <!-- Mount App -->
+    <script>
+      const mountedApp = app.mount("#app");
+    </script>
+  </body>
+</html>
