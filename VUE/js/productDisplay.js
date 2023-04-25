@@ -10,7 +10,7 @@ app.component("product-display", {
     `<div class="product-display">
         <div class="product-container">
           <div class="product-image">
-            <!-- v-bind:src -->
+            <!-- v-bind:src, let Html attributes bind with Vue-->
             <img :src="image" />
           </div>
           <div class="product-info">
@@ -26,16 +26,16 @@ app.component("product-display", {
             <!-- for loop, detail is alias, details is collection-->
                 <li v-for="detail in details">{{detail}}</li>
             </ul>
-
+            <!-- v-on:mouseover, set Html event-->
             <div
+                class="color-circle"
                 v-for="(variant,index) in variants"
                 :key="variant.id"
+                :style="{ backgroundColor:variant.color }"
                 @mouseover="updateVariant(index)"
-                class="color-circle"
-                :style="{ backgroundColor:variant.color}"
             ></div>
             
-            <!-- :class="{active(class name):activeClass}" || [isActive? activeClass :" "]-->
+            <!-- :class="{ active(class name):activeClass }" || class="[isActive? activeClass :" "]" -->
             <button
                 class="button"
                 :class="{ disabledButton:!inStock }"
@@ -45,6 +45,8 @@ app.component("product-display", {
             </button>
           </div>
         </div>
+        <review-list v-if="reviews.length" :reviews="reviews"></review-list>
+        <review-form @review-submitted="addReview"></review-form>
   </div>`,
   data() {
     return {
@@ -66,15 +68,19 @@ app.component("product-display", {
           quantity: 0,
         },
       ],
+      reviews: [],
     };
   },
   methods: {
     addToCart() {
-      this.cart += 1;
+      this.$emit("add-to-cart", this.variants[this.selectedVariant].id);
     },
     updateVariant(index) {
       this.selectedVariant = index;
       console.log(index);
+    },
+    addReview(review) {
+      this.reviews.push(review);
     },
   },
   computed: {
