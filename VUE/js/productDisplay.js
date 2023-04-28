@@ -26,6 +26,7 @@ app.component("product-display", {
             <!-- for loop, detail is alias, details is collection-->
                 <li v-for="detail in details">{{detail}}</li>
             </ul>
+            
             <!-- v-on:mouseover, set Html event-->
             <div
                 class="color-circle"
@@ -41,7 +42,7 @@ app.component("product-display", {
                 :class="{ disabledButton:!inStock }"
                 :disabled="!inStock"
                 @click="addToCart">
-                Addto Cart
+                Add to Cart
             </button>
           </div>
         </div>
