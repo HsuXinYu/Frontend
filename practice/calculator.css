@@ -1,5 +1,5 @@
 body {
-  background-color: rgb(51, 64, 137);
+  background: linear-gradient(#9198e5, #e66465);
 }
 .calculator {
   border: solid 5px rgb(64, 59, 59);
@@ -8,7 +8,7 @@ body {
 }
 .calculator_display {
   background-color: rgb(227, 238, 161);
-  width: 390px;
+  width: 392px;
   height: 100px;
   border: solid 5px rgb(64, 59, 59);
   color: rgb(0, 0, 0);
