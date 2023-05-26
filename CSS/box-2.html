@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* block才具有排版功能，能夠對齊、設定寬高 */
+        .div1{
+            line-height: 150px;
+            text-align: center;
+            background-color:black;
+            height: 100%;
+            font-size: 0px;
+        }
+        /* .div1>div{
+            width:150px;height:150px;display: inline-block;font-size: 16px;
+        } */
+        .box1,.box2,.box3,.box4,.box5,.box6{
+            width:150px;height:150px;display: inline-block;font-size: 16px;
+        }
+        .box1{background-color: red;}
+        .box2{background-color: orange;}
+        .box3{background-color: yellow;}
+        .box4{background-color: blue;}
+        .box5{background-color: Indigo;}
+        .box6{background-color: purple;}
+    </style>
+</head>
+<body>
+    <div class="div1">
+        <!-- div.box${BOX$}*6 -->
+        <div class="box1">BOX1</div>
+        <div class="box2">BOX2</div>
+        <div class="box3">BOX3</div>
+        <div class="box4">BOX4</div>
+        <div class="box5">BOX5</div>
+        <div class="box6">BOX6</div>
+    </div>
+</body>
+</html>

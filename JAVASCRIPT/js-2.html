@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function photos(msg){
+            if(msg="0"){
+                document.getElementById("photo").style.display='none';
+            }else if(msg="1"){
+                document.getElementById("photo").style.display='block';
+            }
+        }
+
+        var ss=true;
+        function togglephoto(){
+            if(ss){
+                document.getElementById("photo").style.display='none';
+            }else{
+                document.getElementById("photo").style.display='block';
+            }
+            ss=!ss;
+        }
+
+        var ss=true;
+        function togglephoto(){
+            if(ss){
+                document.getElementById("photo").style.display='none';
+                document.getElementById("switch").innerHTML='SHOW';
+            }else{
+                document.getElementById("photo").style.display='block';
+                document.getElementById("switch").innerHTML='HIDE';
+            }
+            ss=!ss;
+        }
+    </script>
+</head>
+<body>
+    <button onclick="photos('0')">show</button>
+    <button onclick="photos('1')">hide</button>
+    <button onclick="togglephoto()">toggle</button>
+    <button id="switch" onclick="togglephoto()">HIDE</button>
+    <hr>
+    <img id="photo" src="img/backColor.jpg" alt="">
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <fieldset>
+            <legend>
+                購買人
+            </legend>
+            <label for="user">姓名：</label>
+            <input type="text" name="user" id="user">
+            <br>
+            <label for="mail">E-Mail：</label>
+            <input type="email" name="mail" id="mail">
+        </fieldset>
+        <!-- button預設屬性為submit需將型態變更 -->
+        <button onclick="same()" type="button">同購買人</button>
+        <!-- 加入checked預設為打勾 -->
+        <input checked onclick="same()" type="checkbox" name="age" id="age"><label for="age">同購買人</label>
+        <fieldset>
+            <legend>
+                收件人
+            </legend>
+            <label for="user2">姓名：</label>
+            <input type="text" name="user2" id="user2">
+            <br>
+            <label for="mail2">E-Mail：</label>
+            <input type="email" name="mail2" id="mail2">
+        </fieldset>
+    </form>
+    <script>
+        var ss=true;
+        function same(){
+            // 取得位置
+            var user=document.getElementById("user");
+            var mail=document.getElementById("mail");
+            // 取得值
+            var userV=user.value;
+            var mailV=mail.value;
+            // 因預設為打勾所以需反向判斷(加!)
+            if (!ss){
+                // 取得位置並更換值
+                document.getElementById("user2").value=userV;
+                document.getElementById("mail2").value=mailV;
+            }else {
+                document.getElementById("user2").value='';
+                document.getElementById("mail2").value='';
+            }
+            ss=!ss;
+            // window.alert(ss);
+        }
+    </script>
+</body>
+</html>

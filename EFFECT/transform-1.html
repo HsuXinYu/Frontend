@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    @keyframes movie{
+            0%{
+                transform: rotate(0deg) translate(0,0);
+                transform-origin: left bottom;
+            }
+            100%{
+                transform:rotate(-90deg) translate(-200px,0);
+                transform-origin: left bottom;
+                /* transform:translate(100px,100px); */
+                /* transform:rotate(-90deg); */
+                /* transform:scale(2); */
+                /* transform:skew(30deg,0); */
+            }
+    }
+    .box1,.box2{
+        width: 200px;height: 200px;
+        display: flex;
+        background-color: yellow;
+        position:absolute;
+        left: 0;top: 0;right: 0;bottom: 0;
+        margin: auto;
+    }
+    .box2{
+        background-color: blue;
+        animation-name:movie;
+        animation-duration: 5s;
+        animation-fill-mode: both;
+        /* animation-delay: 2s; */
+        animation-direction: alternate;
+        animation-iteration-count: infinite;    
+    }
+    </style>
+</head>
+<body>
+    <div class="box1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo pariatur cupiditate exercitationem voluptate nostrum assumenda tempora quos ipsa, fugiat aliquam placeat error quas! Inventore dicta non sed ut deserunt beatae.</div>
+    <div class="box2">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nihil officia fugit quidem impedit amet aperiam voluptatem enim? Ipsa neque distinctio nemo quasi nesciunt aliquid sint eaque quibusdam obcaecati, est natus.</div>
+</body>
+</html>

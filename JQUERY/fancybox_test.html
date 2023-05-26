@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css"
+    />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"
+      integrity="sha512-uURl+ZXMBrF4AwGaWmEetzrd+J5/8NRkWAvJx5sbPSSuOb0bZLqf+tOzniObO00BjHa/dD7gub9oCGMLPQHtQA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+      referrerpolicy="no-referrer"
+    ></script>
+    <style>
+      img {
+        width: 150px;
+        height: 150px;
+      }
+    </style>
+    <script>
+      $(document).ready(function () {
+        $(".fancy").fancybox({
+          openSpeed: 300, //開啟速度，單位毫秒
+          closeSpeed: 300, //關閉速度
+          openEffect: "Elastic", //開啟效果，彈出
+          closeEffect: "fade", //關閉效果，淡出
+          padding: 8, //邊框
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <script>
+      for (var i = 1; i <= 12; i++) {
+        document.write(
+          "<a class='fancy' rel='grellry' href='images/" +
+            i +
+            ".jpg'><img src='images/" +
+            i +
+            ".jpg'></a>"
+        );
+      }
+    </script>
+  </body>
+</html>

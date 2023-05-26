@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+        }
+        .slider{
+            width: 100%;
+        }
+        .photo{
+            width: 100%;
+            overflow: hidden;
+        }
+        .photo img{
+            width: 500px;
+            animation: photomove 5s infinite;
+        }
+        @keyframes photomove{
+            0%{transform: translate(0,0);}
+            25%{transform: translate(0,0);}
+            30%{transform: translate(-100%,0);}
+            50%{transform: translate(-100%,0);}
+            55%{transform: translate(-200%,0);}
+            75%{transform: translate(-200%,0);}
+            100%{transform: translate(-300%,0);}
+        }
+    </style>
+</head>
+<body>
+    <div class="slider">
+        <div class="photo">
+            <img src="../images/001.jpg" alt="">
+            <img src="../images/001.jpg" alt="">
+            <img src="../images/001.jpg" alt="">
+            <img src="../images/001.jpg" alt="">
+        </div1>
+    </div>
+</body>
+</html>

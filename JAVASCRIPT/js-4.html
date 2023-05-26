@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var ss;
+        function dropdown(){
+            if(ss){
+                document.getElementById("menu").style.display='block';
+            }else{
+                document.getElementById("menu").style.display='none';
+            }
+            ss=!ss;
+        }
+    </script>
+    <style>
+        .toggle{
+            /* display: block; */
+            width: 30px;height: 30px;
+            border: 1px solid;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .toggle>a{
+            text-decoration: none;
+            font-size: 30px;
+        }
+        .menu{
+            width: 200px;height: 300px;
+            border: 1px solid #000;
+            display: none;
+        }
+        #toggle{
+            display: none;
+        }
+        #toggle:checked+div{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <!-- JS寫法 -->
+    <div class="toggle">
+        <a href="#" onclick="dropdown()">&equiv;</a>
+    </div>
+    <div class="menu" id="menu">
+        <!-- ul>li*5>a{link$} -->
+        <ul>
+            <li><a href="">link1</a></li>
+            <li><a href="">link2</a></li>
+            <li><a href="">link3</a></li>
+            <li><a href="">link4</a></li>
+            <li><a href="">link5</a></li>
+        </ul>
+    </div>
+    <!-- CSS寫法 -->
+    <label class="toggle" for="toggle">
+        &equiv;
+    </label>
+    <input type="checkbox" name="toggle" id="toggle">
+    <div class="menu" id="menu">
+        <ul>
+            <li><a href="">link1</a></li>
+            <li><a href="">link2</a></li>
+            <li><a href="">link3</a></li>
+            <li><a href="">link4</a></li>
+            <li><a href="">link5</a></li>
+        </ul>
+    </div>
+</body>
+</html>

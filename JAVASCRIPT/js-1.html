@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+<style>
+    button{
+        width: 120px;height: 100px;
+    }
+    div{
+        width: 360px;height: 20px;
+        border:solid 1px #000000; 
+    }
+</style>
+</head>
+<body>
+    <!-- <h1>HTML語法</h1>
+    <script>
+        document.write("<h1>JAVASCRIPT語法</h1>");
+    </script>
+    <h1>
+    <script>
+            document.write("JAVASCRIPT語法");
+        </script>
+    </h1> -->
+
+    <!-- <script>
+        document.write("<P style='text-align: center;'><img src='https://picsum.photos/300/300/?random=1'></P>");
+    </script> -->
+
+    <!-- <script>
+        window.alert("ARE U OK?");
+        window.confirm("ARE U OK?");
+        window.prompt("ARE U OK?");
+    </script> -->
+
+    <script>
+        // window.location.href='http://google.com';
+
+        // var n=window.prompt("請問你今年幾歲?");
+        // if (n<30){
+        // document.write("你今年"+n+"歲好年輕");
+        // }
+        // else{
+        // document.write("你今年"+n+"歲好老");
+        // }
+
+        // var n=window.prompt("你想兌換多少美金?");
+        // n*=29.3024;
+        // document.write("你需要付"+n+"新台幣");
+
+        // var n=window.prompt("小明4歲時，小明妹妹的年齡是小明的一半。請問小明50歲時，小明妹妹多少歲?");
+        // if (n==48){document.write("恭喜你答對了!");}
+        // else if (n>48){document.write("你猜的太老的!");}
+        // else {document.write("可以再往上猜喔!");}
+
+        // var n=window.prompt("請輸入1~100之間的數字：");
+        // if(n%3==0 && n%5==0){document.write("3跟5的公倍數");} 
+        // else if(n%3==0){document.write("3的倍數");} 
+        // else if(n%5==0){document.write("5的倍數");} 
+        // else{document.write("不是3且不是5的倍數");}
+
+        // var h=window.prompt("請問你的身高是?");
+        // var w=window.prompt("請問你的體重是?");
+
+        function print1(msg){
+            window.alert(msg);
+        }
+        function print2(msg){
+            document.getElementById("text").innerHTML="<marquee>"+msg+"</marquee>";
+        }       
+        function shopping(cart){
+            if(window.confirm(cart)){
+                window.location.href="index.html";
+            }
+        }
+        function text1(){
+            var user=document.getElementById("user");
+            document.getElementById("memo").innerHTML=user.value;
+        }
+        function text2(){
+            inner.location.href="http://www.pchome.com.tw";
+        }
+    </script>
+
+    <button onclick="print1('HI')">HI</button>
+    <button onclick="print1('HELLO')">HELLO</button>
+    <button onclick="print1('GOOD MORING')">GOODMORING</button>
+    <hr>
+    <button onclick="print2('HI')">HI</button>
+    <button onclick="print2('HELLO')">HELLO</button>
+    <button onclick="print2('GOOD MORING')">GOODMORING</button>
+    <div id="text"></div>
+    <hr>
+    <button onclick="shopping('請問是否要加入購物車?')">購物車</button>
+    <hr>
+    <label for="user">姓名：</label>
+    <input type="text" name="user" id="user">
+    <input onclick="text1()" type="button" value="送出">
+    <div id="memo"></div>
+    <hr>
+    <img name="book" src="img/1_normal.gif" alt="" onmouseover="document.book.src='img/1_over.gif'" onmouseout="document.book.src='img/1_normal.gif'" onmousedown="document.book.src='img/1_down.gif'">
+    <hr>
+    <input type="button" value="PCHOME" onclick="text2()">
+    <iframe name="inner" src="" width="1000px" height="500px"></iframe>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .normal{
+            font-size: 1em;
+        }
+        .large{
+            font-size: 3em;
+        }
+        .fadein{
+            animation: fadein 2s;
+            animation-fill-mode: both;
+        }
+        .fadeout{
+            animation: fadeout 2s;
+            animation-fill-mode: both;
+        }
+        @keyframes fadein {
+            0%{opacity: 0;}
+            100%{opacity: 1;}
+        }
+        @keyframes fadeout {
+            0%{opacity: 1;}
+            100%{opacity: 0;}
+        }
+    </style>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#large").click(function(){
+                $("#text").removeClass();
+                $("#text").addClass("large");
+            });
+            $("#normal").click(function(){
+                $("#text").removeClass();
+                $("#text").addClass("normal");
+            });
+        });
+        $(document).ready(function(){
+            $("#in").click(function(){
+                $("#text").removeClass();
+                // $("#text").addClass("fadeIn");
+                $("#text").fadeIn();
+            });
+            $("#out").click(function(){
+                $("#text").removeClass();
+                // $("#text").addClass("fadeOut");
+                $("#text").fadeOut();
+            });
+            $("#swtich").click(function(){
+                $("#text").fadeToggle();
+            });
+        });
+    </script>
+</head>
+<body>
+    <button id="large">放大</button>
+    <button id="normal">縮小</button>
+    <button id="in">淡入</button>
+    <button id="out">淡出</button>
+    <button id="swtich">淡入/淡出</button>
+    <br>
+    <p id="text">我是jQuery</p>
+</body>
+</html>

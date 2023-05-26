@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 使用inline-block */
+        .box1,.box2,.box3,.box4,.box5,.box6{
+            width: 150px;height: 150px;display:inline-block;line-height: 150px;text-align: center;
+        }
+        /* 使float */
+        .box7,.box8,.box9,.box10,.box11,.box12{
+            width: 150px;height: 150px;float: left;line-height: 150px;text-align: center;
+        }
+        .fix{clear: both;}
+
+        .box1,.box7{background-color: red;}
+        .box2,.box8{background-color: orange;}
+        .box3,.box9{background-color: yellow;}
+        .box4,.box10{background-color: blue;}
+        .box5,.box11{background-color: Indigo;}
+        .box6,.box12{background-color: purple;}
+    </style>
+</head>
+<body>
+    <div class="div1">
+        <div class="box1">BOX1</div>
+    </div>
+    <div class="div2">
+        <div class="box2">BOX2</div>
+        <div class="box3">BOX3</div>
+    </div>
+    <div class="div3">
+        <div class="box4">BOX4</div>
+        <div class="box5">BOX5</div>
+        <div class="box6">BOX6</div>
+    </div>
+    <!-- 可定義兩個群組 -->
+    <div class="box7">BOX7</div>
+    <div class="box8 fix">BOX8</div>
+    <div class="box9">BOX9</div>
+    <div class="box10 fix">BOX10</div>
+    <div class="box11">BOX11</div>
+    <div class="box12">BOX12</div>
+</body>
+</html>
