@@ -5,7 +5,7 @@
 
 // let foods = new Array('滷肉飯','牛肉麵','肉圓');
 
-let foods = ['滷肉飯','牛肉麵','肉圓','臭豆腐','豆花'];
+let foods = ["滷肉飯", "牛肉麵", "肉圓", "臭豆腐", "豆花"];
 // console.log(foods);
 // console.log(foods[0]);
 // console.log(foods[1]);
@@ -36,7 +36,7 @@ let foods = ['滷肉飯','牛肉麵','肉圓','臭豆腐','豆花'];
 // foods.pop();
 
 // unshift()  新增資料到陣列前方
-foods.unshift('烤玉米');
+foods.unshift("烤玉米");
 
 // shift() 刪除陣列的第一筆資料
 // foods.shift();
@@ -51,9 +51,9 @@ foods.unshift('烤玉米');
 // slice() 切片
 // let newFoods =  foods.slice(1,3);
 // console.log(newFoods)
-let day1 = foods.slice(0,2);
-let day2 = foods.slice(2,4);
-let day3 = foods.slice(4,6);
+let day1 = foods.slice(0, 2);
+let day2 = foods.slice(2, 4);
+let day3 = foods.slice(4, 6);
 // console.log(day1,day2,day3);
 
 // join() 陣列->字串
@@ -65,12 +65,12 @@ let foodStr = foods.toString();
 // console.log(foodStr);
 
 // split() 字串->陣列
-let s = '烤玉米,滷肉飯,牛肉麵,肉圓,臭豆腐,豆花';
-let sArray = s.split(',');
+let s = "烤玉米,滷肉飯,牛肉麵,肉圓,臭豆腐,豆花";
+let sArray = s.split(",");
 // console.log(sArray);
 
 // sort() 排序
-let arr = ['Banana','Apple','Fruit','Cat'];
+let arr = ["Banana", "Apple", "Fruit", "Cat"];
 // console.log(arr.sort());
 
 // reverse() 反轉
@@ -79,30 +79,30 @@ let arr = ['Banana','Apple','Fruit','Cat'];
 
 // forEach
 
-foods.forEach(function(food,index){
-    console.log(food,index)
+foods.forEach(function (food, index) {
+  console.log(food, index);
 });
 
 // map
-let foodsMap = foods.map(function(food){
-    // return food.length;
-    // return '售完';
-    return food.length > 2 ? food:null;
+let foodsMap = foods.map(function (food) {
+  // return food.length;
+  // return '售完';
+  return food.length > 2 ? food : null;
 });
 
 // console.log(foodsMap);
 
 // filter
-let foodsFilter = foods.filter(function(food){
-    return food.length == 3;
-})
+let foodsFilter = foods.filter(function (food) {
+  return food.length == 3;
+});
 // console.log(foodsFilter);
 
 // reduce()
-let num = [1,2,3,4,5];
-let total = num.reduce(function(a,b){
-    console.log('a',a)
-    console.log('b',b)
-    return a + b;
-})
+let num = [1, 2, 3, 4, 5];
+let total = num.reduce(function (a, b) {
+  console.log("a", a);
+  console.log("b", b);
+  return a + b;
+});
 console.log(total);
