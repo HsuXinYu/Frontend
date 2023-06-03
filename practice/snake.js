@@ -2,10 +2,11 @@ const canvas = document.getElementById("myCanvas");
 const ct = canvas.getContext("2d");
 //設定格數15格
 const unit = 20;
-const row = canvas.height / unit;
 const col = canvas.width / unit;
+const row = canvas.height / unit;
 
-let myGame = setInterval(draw, 200);
+//更新畫布
+let myGame = setInterval(draw, 150);
 
 let snake = [];
 snake[0] = {
@@ -25,10 +26,24 @@ snake[3] = {
   y: 0,
 };
 
+class Fruit {
+  constructor() {
+    this.x = Math.floor(Math.random() * col) * unit;
+    this.y = Math.floor(Math.random() * row) * unit;
+  }
+
+  drawFruit() {
+    ct.fillStyle = "orange";
+    ct.fillRect(this.x, this.y, unit, unit);
+  }
+}
+
+let myFruit = new Fruit();
+
 window.addEventListener("keydown", changeDirection);
 let dir = "right";
 function changeDirection(e) {
-  console.log(e.key);
+  // console.log(e.key);
   if (e.key == "ArrowUp" && dir != "down") {
     dir = "up";
   } else if (e.key == "ArrowDown" && dir != "up") {
@@ -41,10 +56,14 @@ function changeDirection(e) {
 }
 
 function draw() {
-  console.log("test");
-  //更新畫布
+  // console.log("test");
+  //畫布
   ct.fillStyle = "black";
   ct.fillRect(0, 0, canvas.width, canvas.height);
+
+  //畫果實
+  myFruit.drawFruit();
+
   //畫蛇
   for (let i = 0; i < snake.length; i++) {
     if (i == 0) {
@@ -89,6 +108,12 @@ function draw() {
     y: snakeY,
   };
 
-  snake.pop();
+  //蛇是否吃到果實
+  if (snake[0]["x"] == myFruit["x"] && snake[0]["y"] == myFruit["y"]) {
+    console.log("eating");
+  } else {
+    snake.pop();
+  }
+
   snake.unshift(newHead);
 }
