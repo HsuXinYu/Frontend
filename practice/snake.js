@@ -6,7 +6,7 @@ const col = canvas.width / unit;
 const row = canvas.height / unit;
 
 //更新畫布
-let myGame = setInterval(draw, 150);
+let myGame = setInterval(draw, 100);
 
 let snake = [];
 function createSnake() {
@@ -69,6 +69,12 @@ class Fruit {
 }
 
 //初始設定
+let score = 0;
+let highestScore;
+loadHighestScore();
+document.getElementById("myScore").innerHTML = "遊戲分數:" + score;
+document.getElementById("highestScore").innerHTML = "最高分數:" + highestScore;
+
 createSnake();
 let myFruit = new Fruit();
 
@@ -157,11 +163,31 @@ function draw() {
   //確認蛇是否吃到果實
   if (snake[0]["x"] == myFruit["x"] && snake[0]["y"] == myFruit["y"]) {
     myFruit.pickLocation();
-    myFruit.drawFruit();
+    score++;
+    document.getElementById("myScore").innerHTML = "遊戲分數:" + score;
+    setHighesScore(score);
+    document.getElementById("highestScore").innerHTML =
+      "最高分數:" + highestScore;
   } else {
     snake.pop();
   }
 
   snake.unshift(newHead);
   window.addEventListener("keydown", changeDirection);
+}
+
+function loadHighestScore() {
+  console.log(localStorage.getItem("highestScore"));
+  if (localStorage.getItem("highestScore") == null) {
+    highestScore = 0;
+  } else {
+    highestScore = Number(localStorage.getItem("highestScore"));
+  }
+}
+
+function setHighesScore(score) {
+  if (score > highestScore) {
+    localStorage.setItem("highestScore", score);
+    highestScore = score;
+  }
 }
