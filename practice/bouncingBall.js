@@ -11,6 +11,7 @@ let ySpeed = 20;
 let ground_x = 10;
 let ground_y = 400;
 let brickArray = [];
+let myGame = setInterval(active, 50);
 class Brick {
   constructor(x, y) {
     this.x = x;
@@ -46,26 +47,33 @@ for (let i = 0; i < 10; i++) {
 }
 
 let mouse_x = c.addEventListener("mousemove", function (e) {
-  // console.log(e.layerX);
+  // console.log(e.layerX, e.layerY);
   ground_x = e.layerX;
 });
 
-function draw() {
+function draw_elements() {
   // console.log(canvasWidth, canvasHeight);
   ct.fillStyle = "black";
   ct.fillRect(0, 0, canvasWidth, canvasHeight);
 
   ct.beginPath();
+  // circle_x = 490;
+  // circle_y = 490;
   //x, y, radius, startAngle, endAngle;
-  ct.strokeStyle = "red";
   ct.arc(circle_x, circle_y, radius, 0, 2 * Math.PI);
   ct.stroke();
   ct.fillStyle = "yellow";
   ct.fill();
-  console.log(circle_x, circle_y, "ball");
+
+  // console.log(circle_x, circle_y, "ball");
   ct.fillStyle = "orange";
   ct.fillRect(ground_x, ground_y, 200, 5);
 
+  //製作磚塊
+  brickArray.forEach((brick) => brick.drawBrick(ct));
+}
+
+function active() {
   //球碰到地板反彈
   if (
     circle_x >= ground_x - radius &&
@@ -81,9 +89,6 @@ function draw() {
       ySpeed *= -1;
     }
   }
-
-  //製作磚塊
-  brickArray.forEach((brick) => brick.drawBrick(ct));
 
   // 確認是否打到磚塊
   brickArray.forEach((brick, index) => {
@@ -102,22 +107,22 @@ function draw() {
   //移動球
 
   if (circle_y >= canvasHeight - radius) {
-    console.log(circle_y);
+    // console.log(circle_y);
     // alert("bottom wall");
     ySpeed *= -1;
   }
   if (circle_x >= canvasWidth - radius) {
-    console.log(circle_x);
+    // console.log(circle_x);
     // alert("right wall");
     xSpeed *= -1;
   }
   if (circle_y <= radius) {
-    console.log(circle_y);
+    // console.log(circle_y);
     // alert("top wall");
     ySpeed *= -1;
   }
   if (circle_x <= radius) {
-    console.log(circle_x);
+    // console.log(circle_x);
     // alert("left wall");
     xSpeed *= -1;
   }
@@ -128,6 +133,6 @@ function draw() {
     alert("遊戲結束");
     clearInterval(myGame);
   }
-}
 
-let myGame = setInterval(draw, 100);
+  draw_elements();
+}

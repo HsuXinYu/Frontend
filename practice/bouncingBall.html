@@ -12,6 +12,9 @@
       margin: 0;
       box-sizing: border-box;
     }
+    body {
+      text-align: center;
+    }
     canvas {
       position: absolute;
       margin: auto;
@@ -20,8 +23,17 @@
       top: 0;
       bottom: 0;
     }
+    #start {
+      background-color: orange;
+      border: none;
+      font-size: 1.5rem;
+      margin: 2rem 0;
+    }
   </style>
   <body>
+    <button type="button" id="start" onClick="location.reload()">
+      New Game
+    </button>
     <canvas id="myCanvas" width="800" height="500"></canvas>
     <script src="./bouncingBall.js"></script>
   </body>
