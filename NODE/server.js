@@ -25,6 +25,6 @@ const server = http.createServer((req, res) => {
   }
 });
 
-server.listen(2000, () => {
-  console.log("伺服器在port2000運行");
+server.listen(3000, () => {
+  console.log("伺服器在port3000運行");
 });

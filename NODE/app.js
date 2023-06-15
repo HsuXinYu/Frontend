@@ -1,39 +1,32 @@
 const express = require("express");
 const app = express();
 
-//middlewares
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+app.use(express.static("public"));
+app.set("view engine", "ejs");
 
-//GET, POST, PUT,  DELETE (path, handler)
 app.get("/", (req, res) => {
-  let obj = {
-    title: "Web Design",
-    website: "udemy",
-  };
-  res.json(obj);
+  const language = [
+    { name: "Python", rating: 9.5, popularity: 9.7, trending: "super hot" },
+    { name: "Java", rating: 9.4, popularity: 8.5, trending: "hot" },
+    { name: "C++", rating: 9.2, popularity: 7.7, trending: "hot" },
+    { name: "PHP", rating: 9.0, popularity: 5.7, trending: "decreasing" },
+    { name: "JS", rating: 8.5, popularity: 8.7, trending: "hot" },
+  ];
+  res.render("index", { language });
 });
 
-app.get("/myPage", (req, res) => {
-  res.sendFile(__dirname + "/myPage.html");
-});
-
-// app.get("/fromHandling", (req, res) => {
-//   //   console.log(req.query);
-//   res.send("你的名字為" + req.query.name + "年齡為" + req.query.age);
+// app.get("/:name", (req, res) => {
+//   //   res.render("index.ejs");
+//   let { name } = req.params;
+//   //js出現object屬性與值的變數名稱相同時可省略變數名稱
+//   res.render("index", { name });
 // });
 
-app.post("/fromHandling", (req, res) => {
-  // console.log(req.body);
-  let { email, password } = req.body;
-  res.send("你的信箱是" + email);
+app.get("/example", (req, res) => {
+  let { name, age } = req.query;
+  res.render("response", { name, age });
 });
 
-app.get("*", (req, res) => {
-  res.status(404).send("你所找尋的頁面不存在");
-});
-
-//listen (port, callback)
-app.listen(2000, () => {
-  console.log("伺服器正在port2000...");
+app.listen(3000, () => {
+  console.log("伺服器正在port3000");
 });
