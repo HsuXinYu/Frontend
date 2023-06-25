@@ -20,8 +20,7 @@
 //weather API
 let city = "Taipei";
 let myKey = "57c8259eebcdc67a13acc09856b32d9c";
-let url =
-  "https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${myKey}";
+let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${myKey}`;
 
 async function weather() {
   try {
