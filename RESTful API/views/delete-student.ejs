@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>刪除學生資料</title>
+    <style>
+      table,
+      tr,
+      td {
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <form
+      action="/students/<%= foundStudent._id %>?_method=DELETE"
+      method="POST"
+    >
+      <table>
+        <tr>
+          <td>學生ID:</td>
+          <td><%= foundStudent._id %></td>
+        </tr>
+        <tr>
+          <td>學生姓名:</td>
+          <td><%= foundStudent.name %></td>
+        </tr>
+        <tr>
+          <td>學生年齡:</td>
+          <td><%= foundStudent.age %></td>
+        </tr>
+        <tr>
+          <td>主修科目:</td>
+          <td><%= foundStudent.major %></td>
+        </tr>
+      </table>
+      <button>確認刪除此學生資料</button>
+    </form>
+    <a href="/students">回到首頁</a>
+  </body>
+</html>

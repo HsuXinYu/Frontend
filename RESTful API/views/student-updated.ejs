@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>訊息</title>
+    <style>
+      table,
+      tr,
+      td {
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>成功修改學生資料!</h1>
+    <p>以下為修改後的學生資料:</p>
+    <table>
+      <tr>
+        <td>學生ID:</td>
+        <td><%= newData._id %></td>
+      </tr>
+      <tr>
+        <td>學生姓名:</td>
+        <td><%= newData.name %></td>
+      </tr>
+      <tr>
+        <td>學生年齡:</td>
+        <td><%= newData.age %></td>
+      </tr>
+      <tr>
+        <td>主修科目:</td>
+        <td><%= newData.major %></td>
+      </tr>
+    </table>
+    <a href="/students">回到首頁</a>
+  </body>
+</html>
