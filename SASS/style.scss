@@ -1,0 +1,39 @@
+$basicColor: rgb(180, 189, 107);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@mixin flexbox($direction) {
+  display: flex;
+  flex-direction: $direction;
+}
+
+// @import "header.scss";
+header {
+  nav {
+    ul {
+      @include flexbox(column);
+      flex-wrap: wrap;
+      li {
+        a {
+          color: $basicColor;
+          text-decoration: none;
+          &:hover {
+            color: green;
+          }
+        }
+      }
+    }
+  }
+}
+
+h1 {
+  color: $basicColor;
+}
+
+h2 {
+  color: $basicColor;
+}

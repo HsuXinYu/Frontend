@@ -1,0 +1,26 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header nav ul {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+header nav ul li a {
+  color: rgb(180, 189, 107);
+  text-decoration: none;
+}
+header nav ul li a:hover {
+  color: green;
+}
+
+h1 {
+  color: rgb(180, 189, 107);
+}
+
+h2 {
+  color: rgb(180, 189, 107);
+}/*# sourceMappingURL=style.css.map */

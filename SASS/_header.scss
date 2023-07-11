@@ -1,0 +1,17 @@
+header {
+  nav {
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      li {
+        a {
+          color: $basicColor;
+          text-decoration: none;
+          &:hover {
+            color: green;
+          }
+        }
+      }
+    }
+  }
+}
