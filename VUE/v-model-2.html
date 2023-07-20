@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@next"></script>
+  </head>
+  <body>
+    <div id="app">
+      <section>
+        <div class="container">
+          <div class="title">
+            <div class="output">
+              {{name}}， {{sex}}性， 年齡為{{age}}
+              <br />
+              {{interest.length?"喜歡":""}}{{interest.join("、")}}
+              {{interest.length?"，":""}} {{member?"已":"未"}}成為頻道會員
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="form">
+        <table>
+          <tr>
+            <td class="title">姓名:</td>
+            <td><input v-model="name" /></td>
+          </tr>
+          <tr>
+            <td class="title">性別:</td>
+            <td><input type="radio" value="男" v-model="sex" />男性</td>
+            <td><input type="radio" value="女" v-model="sex" />女性</td>
+          </tr>
+          <tr>
+            <td class="title">年齡:</td>
+            <td>
+              <select v-model="age">
+                <option>20歲以下</option>
+                <option>20~30歲之間</option>
+                <option>30~40歲之間</option>
+                <option>40歲以上</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td class="title">興趣:</td>
+            <td>
+              <input type="checkbox" value="打電動" v-model="interest" />打電動
+            </td>
+            <td>
+              <input type="checkbox" value="遊日本" v-model="interest" />遊日本
+            </td>
+          </tr>
+          <tr>
+            <td class="title">會員:</td>
+            <td><input type="checkbox" v-model="member" hecked />加入</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <script>
+      Vue.createApp({
+        data() {
+          return {
+            name: "Alice",
+            sex: "女",
+            age: "20~30歲之間",
+            interest: [],
+            member: true,
+          };
+        },
+      }).mount("#app");
+    </script>
+  </body>
+</html>
