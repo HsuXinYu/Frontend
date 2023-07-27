@@ -1,0 +1,13 @@
+.layout {
+  padding: 3rem;
+}
+
+.header {
+  background-color: black;
+  color: white;
+}
+
+.home {
+  color: rgb(60, 111, 78);
+  text-decoration: underline;
+}
