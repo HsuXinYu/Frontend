@@ -8,6 +8,7 @@ const studentSchema = new Schema({
     min: [0, "年齡不能是負數"],
     max: [80, "年齡可能太大了"],
     default: 18,
+    required: true,
   },
   major: {
     type: String,

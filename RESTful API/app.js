@@ -2,8 +2,7 @@ const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
 const studentRoutes = require("./routes/student-routes");
-
-// const cors = require("cors");
+const cors = require("cors");
 
 //因無法直接提出put、patch、delete請求，需下載method-override
 const methodOverride = require("method-override");
@@ -18,13 +17,12 @@ mongoose
   });
 
 app.set("view engine", "ejs");
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-// app.use(cors());
 app.use(methodOverride("_method"));
 app.use("/students", studentRoutes);
-s;
 
-app.listen(3000, () => {
-  console.log("正在伺服器3000...");
+app.listen(8080, () => {
+  console.log("正在伺服器8080...");
 });

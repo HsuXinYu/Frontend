@@ -35,13 +35,14 @@ router.get("/new", (req, res) => {
 router.get("/", async (req, res) => {
   try {
     let studentData = await Student.find({}).exec();
-    // return res.send(studentData);
-    return res.render("students", { studentData });
+    return res.send(studentData);
+    // return res.render("students", { studentData });
   } catch (e) {
     return res.status(500).send("尋找資料時發生錯誤...");
   }
 });
 
+//查詢特定學生資料
 router.get("/:_id", async (req, res) => {
   try {
     let { _id } = req.params;
@@ -50,7 +51,8 @@ router.get("/:_id", async (req, res) => {
     if (foundStudent == null) {
       return res.status(400).render("student-id-error");
     }
-    return res.render("student-page", { foundStudent });
+    return res.send(foundStudent);
+    // return res.render("student-page", { foundStudent });
   } catch (e) {
     console.log(e);
     return res.status(400).render("student-id-error");
@@ -146,7 +148,7 @@ router.delete("/:_id", async (req, res) => {
     return res.render("student-deleted", { deleteData });
   } catch (e) {
     console.log(e);
-    return res.status(500).send("無法此學生資料");
+    return res.status(500).send("無法刪除此學生資料");
   }
 });
 
