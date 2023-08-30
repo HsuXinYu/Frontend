@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+  </head>
+  <body>
+    <div id="navbar"><span>three.js</span></div>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.155.0/three.min.js"
+      integrity="sha512-auFmPm+de880vk/c+bgBmuOnQ7BM28z7zPWmepVgX8737t75OHZjElOnQqERwP8cE4DIyCJ+gb1kE0b/eLWcnA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script>
+      var scene = new THREE.Scene();
+      var camera = new THREE.PerspectiveCamera(
+        75,
+        window.innerWidth / window.innerHeight
+      );
+
+      const renderer = new THREE.WebGLRenderer({ antialias: true });
+      renderer.setSize(window.innerWidth, window.innerHeight);
+      $("body").append(renderer.domElement);
+
+      var geometry = new THREE.BoxGeometry(1, 1, 1);
+      var material = new THREE.MeshBasicMaterial({ color: 0xff0000 });
+      var cube = new THREE.Mesh(geometry, material);
+      scene.add(cube);
+
+      cube.position.z = -5;
+      cube.rotation.x = 10;
+      cube.rotation.y = 5;
+
+      //   renderer.render(scene, camera);
+
+      var animation = function () {
+        cube.rotation.y += 0.01;
+        renderer.render(scene, camera);
+        requestAnimationFrame(animation);
+      };
+
+      animation();
+    </script>
+  </body>
+</html>

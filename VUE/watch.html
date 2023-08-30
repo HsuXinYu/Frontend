@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background-color: rgb(41, 167, 125);
+        text-align: center;
+      }
+      .description div {
+        display: inline-block;
+        background-color: rgb(255, 255, 255);
+        width: 50px;
+        height: 50px;
+        border-radius: 50px;
+        margin: 50px;
+        color: rgb(41, 167, 125);
+        font-size: 25px;
+        line-height: 50px;
+      }
+    </style>
+    <script src="https://unpkg.com/vue@next"></script>
+  </head>
+  <body>
+    <div id="app">
+      <section>
+        <div class="container">
+          <div class="title">
+            <div class="description">
+              <div @click="number++">{{number}}</div>
+            </div>
+            <div class="description">
+              <div @click="obj.num++">{{obj.num}}</div>
+            </div>
+            <div class="description">
+              <div
+                v-for="(number,index) in numberList"
+                @click="numberListHandler(index)"
+              >
+                {{number}}
+              </div>
+            </div>
+            <div class="description">
+              <div
+                v-for="(item,index) in objList"
+                @click="objListHandler(index)"
+              >
+                {{item.num}}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <script>
+      Vue.createApp({
+        data() {
+          return {
+            number: 0,
+            numberList: [0, 0, 0],
+            obj: {
+              num: 0,
+            },
+            objList: [{ num: 0 }, { num: 0 }, { num: 0 }],
+          };
+        },
+        methods: {
+          numberListHandler(index) {
+            // this.numberList[index]++;
+            this.$set(this.numberList, index, this.numberList[index] + 1);
+          },
+          objListHandler(index) {
+            this.objList[index].num++;
+          },
+        },
+        watch: {
+          number(val, oldVal) {
+            console.log("number:", val, oldVal);
+          },
+          // ["obj.num"](val, oldVal) {
+          //   console.log("obj:", val, oldVal);
+          // },
+
+          //如觀測為整個物件，新值跟舊值的結果都一樣
+          obj: {
+            handler(val, oldVal) {
+              console.log("obj:", val, oldVal);
+            },
+            deep: true,
+          },
+          numberList(val, oldVal) {
+            console.log("numberList:", val, oldVal);
+          },
+          objList: {
+            handler(val, oldVal) {
+              console.log("objList:", val, oldVal);
+            },
+            deep: true,
+          },
+        },
+      }).mount("#app");
+    </script>
+  </body>
+</html>
