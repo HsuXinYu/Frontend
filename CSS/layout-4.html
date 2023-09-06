@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>交錯漂浮版</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Noto+Sans+TC:100,300,400,500,700,900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+      body {
+        background-color: #327e8d;
+        padding: 100px 0;
+      }
+      .wrap {
+        width: 1200px;
+        margin: auto;
+      }
+      .item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 80px;
+        font-family: "Noto Sans TC", sans-serif;
+      }
+      .item .pic {
+        width: 55%;
+        flex-shrink: 0;
+      }
+      .item .pic img {
+        width: 100%;
+        vertical-align: middle;
+      }
+      .item .text {
+        width: 55%;
+        flex-shrink: 0;
+        padding: 50px 30px;
+        box-sizing: border-box;
+        z-index: 1;
+      }
+      .item > :first-child {
+        margin-right: -10%;
+      }
+      .item:nth-child(1) .text {
+        background-color: rgba(246, 90, 63, 0.8);
+      }
+      .item:nth-child(2) .text {
+        background-color: rgba(231, 162, 59, 0.8);
+      }
+      .item:nth-child(3) .text {
+        background-color: rgba(241, 227, 72, 0.8);
+      }
+      .item:nth-child(4) .text {
+        background-color: rgba(116, 224, 94, 0.8);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <!-- item 1 -->
+      <div class="item">
+        <div class="pic">
+          <img src="https://picsum.photos/600/350/?random=1" />
+        </div>
+        <div class="text">
+          <h2>金魚的記憶</h2>
+          <p>
+            如果把「魚的記憶有
+            7秒」當成一個科學的結論，就會產生很多疑問。記憶能力可以被精確到秒嗎？如果魚的平均記憶有7秒，那麼一些比較笨的魚的記憶豈不是只有
+            2、3秒？當這些「笨」魚咬了一口食物以後，會不會瞬間忘記嘴裡含著的東西是什麼？
+          </p>
+        </div>
+      </div>
+      <!-- item 2 -->
+      <div class="item">
+        <div class="text">
+          <h2>人類的記憶</h2>
+          <p>
+            人類的記憶是神經系統存儲過往經驗的能力，關於記憶的研究屬於心理學或腦部科學的範疇。記憶代表著一個人對過去活動、感受、經驗的印象累積，有相當多種分類，主要因環境、時間和知覺來分。
+          </p>
+        </div>
+        <div class="pic">
+          <img src="https://picsum.photos/600/350/?random=2" />
+        </div>
+      </div>
+      <!-- item 3 -->
+      <div class="item">
+        <div class="pic">
+          <img src="https://picsum.photos/600/350/?random=3" />
+        </div>
+        <div class="text">
+          <h2>如何增強記憶</h2>
+          <p>
+            你的「記憶力」好嗎？該怎麼提升自己的記憶力？容易忘東忘西在別人眼裡可能是健忘或心不在焉的表現之一，如果不想令人留下壞印象，花點心思提高記憶力吧！此外，及早預防大腦退化，也有助減低患失智症和阿茲海默氏症等疾病。
+          </p>
+        </div>
+      </div>
+      <!-- item 4 -->
+      <div class="item">
+        <div class="text">
+          <h2>技巧</h2>
+          <p>
+            1. 少吃糖 2. 吃魚油 3. 冥想 4. 保持健康的體重 5. 取得足夠的睡眠 6.
+            練習正念 7. 少喝酒 8. 訓練你的大腦 9. 減少攝取精製碳水化合物 10.
+            攝取足夠維他命 D 11. 運動 12. 吃抗氧化食物
+          </p>
+        </div>
+        <div class="pic">
+          <img src="https://picsum.photos/600/350/?random=4" />
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
