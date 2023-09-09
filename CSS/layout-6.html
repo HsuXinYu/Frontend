@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>頁尾區塊</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Noto+Sans+TC:100,300,400,500,700,900&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/4a03b9c5b3.js"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        font-family: "Noto Sans TC", sans-serif;
+      }
+      .footer {
+        background: linear-gradient(
+          -20deg,
+          rgb(86, 86, 155),
+          rgb(84, 175, 200)
+        );
+        padding: 150px 0 0 0;
+      }
+      .footer .container {
+        display: flex;
+        width: 1200px;
+        margin: auto;
+      }
+      .footer-item {
+        width: 0;
+        flex-grow: 1;
+        margin: 0 20px;
+      }
+      .footer-item nav {
+        display: flex;
+        flex-direction: column;
+      }
+      .footer-item h4 {
+        color: white;
+        font-size: 24px;
+        border-bottom: 1px dotted white;
+        margin-bottom: 0.5em;
+        padding-bottom: 0.5em;
+      }
+      .footer-item nav a {
+        color: white;
+        line-height: 1.4;
+        text-decoration: none;
+        padding: 5px 0;
+      }
+      .footer-sub {
+        display: flex;
+        flex-direction: column;
+      }
+      .footer-sub form {
+        display: flex;
+        width: 100%;
+        margin: auto 0;
+      }
+      .footer-sub input[type="text"],
+      .footer-sub input[type="submit"] {
+        border: none;
+        padding: 5px 10px;
+      }
+      .footer-sub input[type="text"] {
+        width: 0;
+        flex-grow: 1;
+      }
+      .footer-sub input[type="submit"] {
+        background-color: rgb(49, 59, 194);
+        color: aquamarine;
+      }
+      .copyright {
+        width: 100%;
+        background-color: rgb(49, 59, 194);
+        color: aquamarine;
+        margin: 150px 0 0 0;
+        padding: 10px 0;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="footer">
+      <div class="container">
+        <div class="footer-item">
+          <h4>關於課程</h4>
+          <nav>
+            <a href="#" class="fa-solid fa-tag">課程目標</a>
+            <a href="#" class="fa-solid fa-tag">教學理念</a>
+            <a href="#" class="fa-solid fa-tag">課程宗旨</a>
+          </nav>
+        </div>
+        <div class="footer-item">
+          <h4>課程列表</h4>
+          <nav>
+            <a href="#" class="fa-solid fa-tag">網頁入門班</a>
+            <a href="#" class="fa-solid fa-tag">RWD網頁</a>
+            <a href="#" class="fa-solid fa-tag">CSS 3互動動畫設計</a>
+            <a href="#" class="fa-solid fa-tag">Bootstrap框架</a>
+          </nav>
+        </div>
+        <div class="footer-item">
+          <h4>服務項目</h4>
+          <nav>
+            <a href="#" class="fa-solid fa-tag">網站建置顧問</a>
+            <a href="#" class="fa-solid fa-tag">網站規劃設計</a>
+            <a href="#" class="fa-solid fa-tag">網站建置</a>
+            <a href="#" class="fa-solid fa-tag">企業教育訓練</a>
+          </nav>
+        </div>
+        <div class="footer-item footer-sub">
+          <h4>訂閱電子報</h4>
+          <form>
+            <input type="text" name="" />
+            <input type="submit" value="訂閱" />
+          </form>
+        </div>
+      </div>
+      <div class="copyright">Copyright &copy; 2023 頁尾區塊</div>
+    </div>
+  </body>
+</html>
