@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>導覽列</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Noto+Sans+TC:100,300,400,500,700,900&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/4a03b9c5b3.js"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        font-family: "Noto Sans TC", sans-serif;
+      }
+      .header {
+        background: linear-gradient(0deg, #d2cb61, #fe87de);
+      }
+      .header .container {
+        display: flex;
+        padding: 20px;
+        max-width: 1200px;
+        margin: auto;
+        align-items: center;
+      }
+      .header .logo {
+        width: 100px;
+      }
+      .header .logo img {
+        width: 100%;
+        vertical-align: middle;
+      }
+      .header .nav {
+        margin: auto;
+      }
+      .header .nav a {
+        display: inline-block;
+        text-decoration: none;
+        color: #fff;
+        padding: 5px 1em;
+        position: relative;
+        transform: translateY(0px);
+        transition: 0.3s;
+      }
+      .header .nav a:hover {
+        transform: translateY(-5px);
+      }
+      .header .nav a::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        right: 50%;
+        bottom: -5px;
+        height: 0;
+        border-bottom: 1px solid #fff;
+        transition: 0.3s;
+      }
+      .header .nav a:hover::after {
+        left: 0;
+        right: 0;
+      }
+      .header .search {
+        display: flex;
+      }
+      .header .search input,
+      .header .search button {
+        border: none;
+        background-color: #fff;
+        padding: 5px 10px;
+      }
+      .header .search input:focus,
+      .header .search button:focus {
+        outline: none;
+      }
+      .header .search input {
+        border-radius: 200px 0 0 200px;
+      }
+      .header .search button {
+        border-radius: 0 200px 200px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <a href="#" class="logo">
+          <img src="../images/L150.png" alt="logo" />
+        </a>
+        <nav class="nav">
+          <a href="#">飲食</a>
+          <a href="#">如廁</a>
+          <a href="#">睡眠</a>
+          <a href="#">活動</a>
+          <a href="#">健康</a>
+        </nav>
+        <form class="search">
+          <input type="search" name="" id="" />
+          <button><i class="fa fa-search"></i></button>
+        </form>
+      </div>
+    </header>
+  </body>
+</html>
