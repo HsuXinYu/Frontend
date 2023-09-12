@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>麵包屑</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Noto+Sans+TC:100,300,400,500,700,900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        font-family: "Noto Sans TC", sans-serif;
+      }
+      body {
+        background-color: #28788b;
+      }
+      .wrap {
+        background-color: #b59242;
+        padding: 10px 0;
+        box-shadow: 0px 5px 5px rgba(181, 146, 66, 0.7);
+      }
+      .breadcrumb {
+        width: 90%;
+        margin: auto;
+        display: flex;
+      }
+      .breadcrumb li {
+        padding: 0 20px 0 0;
+      }
+      .breadcrumb li + li::before {
+        content: ">";
+        color: #fff;
+        margin-right: 20px;
+      }
+      .breadcrumb li a {
+        text-decoration: none;
+        color: #fff;
+      }
+      .breadcrumb li a:hover,
+      .breadcrumb li:last-child a {
+        color: yellow;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <ol class="breadcrumb">
+        <li><a href="#">飲食</a></li>
+        <li><a href="#">如廁</a></li>
+        <li><a href="#">睡眠</a></li>
+        <li><a href="#">健康</a></li>
+        <li><a href="#">活動</a></li>
+        <li><a href="#">小知識</a></li>
+      </ol>
+    </div>
+  </body>
+</html>

@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>導覽列</title>
+    <title>導覽列2</title>
     <link
       href="https://fonts.googleapis.com/css?family=Noto+Sans+TC:100,300,400,500,700,900&display=swap"
       rel="stylesheet"
@@ -24,20 +24,20 @@
       }
       .header .container {
         display: flex;
+        justify-content: center;
+        align-items: center;
         padding: 20px;
         max-width: 1200px;
         margin: auto;
-        align-items: center;
+        height: 100px;
       }
       .header .logo {
         width: 100px;
+        position: absolute;
       }
       .header .logo img {
         width: 100%;
         vertical-align: middle;
-      }
-      .header .nav {
-        margin: auto;
       }
       .header .nav a {
         display: inline-block;
@@ -47,6 +47,9 @@
         position: relative;
         transform: translateY(0px);
         transition: 0.3s;
+      }
+      .header .nav a:nth-child(4) {
+        margin-left: 300px;
       }
       .header .nav a:hover {
         transform: translateY(-5px);
@@ -65,25 +68,6 @@
         left: 0;
         right: 0;
       }
-      .header .search {
-        display: flex;
-      }
-      .header .search input,
-      .header .search button {
-        border: none;
-        background-color: #fff;
-        padding: 5px 10px;
-      }
-      .header .search input:focus,
-      .header .search button:focus {
-        outline: none;
-      }
-      .header .search input {
-        border-radius: 200px 0 0 200px;
-      }
-      .header .search button {
-        border-radius: 0 200px 200px 0;
-      }
     </style>
   </head>
   <body>
@@ -100,10 +84,6 @@
           <a href="#">活動</a>
           <a href="#">小知識</a>
         </nav>
-        <form class="search">
-          <input type="search" name="" id="" />
-          <button><i class="fa fa-search"></i></button>
-        </form>
       </div>
     </header>
   </body>
