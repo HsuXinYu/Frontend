@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>方塊酥</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Noto+Sans+TC:100,300,400,500,700,900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        font-family: "Noto Sans TC", sans-serif;
+      }
+      body {
+        background-color: #000;
+      }
+      .wrap {
+        width: 100%;
+        margin: auto;
+        overflow: hidden;
+      }
+      .item {
+        float: left;
+        position: relative;
+      }
+      .item img {
+        width: 100%;
+        vertical-align: middle;
+      }
+      .item:first-child {
+        width: 50%;
+      }
+      .item:first-child ~ .item {
+        width: 25%;
+      }
+      .item .text {
+        color: #fff;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        padding: 15px;
+        text-align: center;
+        box-sizing: border-box;
+        background-color: rgba(0, 0, 0, 0.6);
+        /* display: flex; */
+        opacity: 0;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: 0.5s;
+        transform: scale(0);
+      }
+      .item:hover .text {
+        opacity: 1;
+        transform: scale(1);
+      }
+      .item h3 {
+        margin-bottom: 0.4em;
+      }
+      .item p {
+        font-weight: 100;
+        line-height: 1.6;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="item">
+        <img src="https://picsum.photos/500/500/?random=10" />
+        <div class="text">
+          <h3>HTML</h3>
+          <p>網頁最基礎的程式語言，想學習網頁設計第一步就從這開始。</p>
+        </div>
+      </div>
+      <div class="item">
+        <img src="https://picsum.photos/500/500/?random=20" />
+        <div class="text">
+          <h3>CSS</h3>
+          <p>CSS選擇器是CSS的基礎，需要將基礎打穩才能迎刃有餘。</p>
+        </div>
+      </div>
+      <div class="item">
+        <img src="https://picsum.photos/500/500/?random=30" />
+        <div class="text">
+          <h3>切版</h3>
+          <p>網頁切版怎麼切，主要訴求簡單快速將網頁畫面完成。</p>
+        </div>
+      </div>
+      <div class="item">
+        <img src="https://picsum.photos/500/500/?random=40" />
+        <div class="text">
+          <h3>Javascript</h3>
+          <p>開始加入程式邏輯了，想要有好的動畫效果必學語言。</p>
+        </div>
+      </div>
+      <div class="item">
+        <img src="https://picsum.photos/500/500/?random=50" />
+        <div class="text">
+          <h3>Vue、React</h3>
+          <p>網頁設計基礎都打穩了，可以開始使用一些框架瞜!</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

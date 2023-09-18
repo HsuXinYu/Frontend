@@ -7,7 +7,6 @@
     <title>Document</title>
     <script src="https://unpkg.com/vue@next"></script>
   </head>
-
   <body>
     <div id="app">
       <h1>{{title}}</h1>
@@ -15,6 +14,7 @@
         <div v-for="food in foods">{{food}}</div>
         <div v-for="food of foods">{{food}}</div>
       </div>
+      <hr />
       <div>
         <div v-for="drink in drinks">
           <span v-if="drink.price > 50" style="color: cyan"
@@ -26,20 +26,49 @@
           <span v-else style="color: green">{{drink.name}}</span>
         </div>
       </div>
+      <div>{{drinksName}}</div>
+      <div>{{drinksPrice}}</div>
+      <hr />
       <div>{{num > 0 ? '正':'負'}}</div>
-      <a v-bind:href="link">Yahoo</a>
+      <a v-bind:href="link">Yahoo!</a>
       <hr />
-      {{drinksName}}
+      <span>Multiline message is:</span>
+      <p>{{ message }}</p>
+      <input v-model="message" placeholder="input" />
+      <br />
+      <textarea v-model="message" placeholder="textarea"></textarea>
       <hr />
-      {{drinksPrice}}
+      <div>Picked: {{ picked }}</div>
+      <input type="radio" id="one" value="One" v-model="picked" />
+      <label for="one">One</label>
+      <input type="radio" id="two" value="Two" v-model="picked" />
+      <label for="two">Two</label>
+      <hr />
+      <!-- 將多個複選框綁定至同一陣列 -->
+      <div>Checked names: {{ checkedNames }}</div>
+      <input type="checkbox" id="jack" value="Jack" v-model="checkedNames" />
+      <label for="jack">Jack</label>
+      <input type="checkbox" id="john" value="John" v-model="checkedNames" />
+      <label for="john">John</label>
+      <input type="checkbox" id="mike" value="Mike" v-model="checkedNames" />
+      <label for="mike">Mike</label>
+      <hr />
+      <!-- 如初始值不匹配任何一個選項，建議提供一個為空值的禁用選項 -->
+      <div>Selected: {{ selected }}</div>
+      <select v-model="selected">
+        <option disabled value="">Please select one</option>
+        <option>A</option>
+        <option>B</option>
+        <option>C</option>
+        <option value="{ number: 123 }">123</option>
+      </select>
+      <hr />
     </div>
     <script>
       Vue.createApp({
         data() {
           return {
-            title: "Hello VUE!!!",
-            link: "https://tw.yahoo.com",
-            num: -10,
+            title: "Hello Vue!!!",
             foods: ["滷肉飯", "牛肉麵", "肉圓", "臭豆腐", "豆花"],
             drinks: [
               {
@@ -68,6 +97,12 @@
                 price: 30,
               },
             ],
+            num: -10,
+            link: "https://tw.yahoo.com",
+            message: "",
+            picked: "",
+            checkedNames: [],
+            selected: "",
           };
         },
         computed: {
