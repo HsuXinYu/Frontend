@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>多層次收合選單</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Noto+Sans+TC:100,300,400,500,700,900&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/4a03b9c5b3.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    html,
+    body {
+      height: 100%;
+    }
+    body {
+      background-image: linear-gradient(45deg, #fffaf0, #f8c3c1);
+    }
+    .side-menu {
+      width: 300px;
+      height: 100%;
+      padding: 50px 0;
+      box-sizing: border-box;
+      background-image: linear-gradient(0deg, #fdc496, #f9b4b4);
+      display: flex;
+      flex-direction: column;
+      box-shadow: 5px 0px 50px hsla(31, 64%, 68%, 0.6);
+      position: relative;
+      transform: translateX(-100%);
+      transition: 0.5s;
+    }
+    .side-menu form {
+      display: flex;
+      margin: 0 10px 50px;
+      border-radius: 100px;
+      border: 1px solid #fff;
+    }
+    .side-menu form input,
+    .side-menu form button {
+      border: none;
+      background-color: transparent;
+      color: #fff;
+      padding: 5px 10px;
+      width: 230px;
+    }
+    .side-menu form input {
+      width: 230px;
+    }
+    .side-menu form button {
+      width: 50px;
+    }
+    .side-menu form input:focus,
+    .side-menu form button:focus {
+      outline: none;
+    }
+    ::placeholder {
+      color: #fff;
+    }
+    .side-menu label {
+      width: 40px;
+      height: 80px;
+      font-size: 1.5em;
+      line-height: 80px;
+      color: #fff;
+      text-align: center;
+      background-color: #fee080;
+      position: absolute;
+      right: -40px;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      border-radius: 0 10px 10px 0;
+    }
+    .nav ul {
+      display: none;
+      position: absolute;
+      top: 10px;
+      left: 100%;
+      width: 200px;
+      background-color: rgba(120, 90, 40, 0.4);
+      box-shadow: 5px 5px 10px hsla(31, 64%, 68%, 0.6);
+    }
+    .nav li:hover > ul {
+      display: block;
+    }
+    .nav li {
+      position: relative;
+    }
+    .nav li + li a::before {
+      border-top: 1px solid #fff;
+      content: "";
+      position: absolute;
+      left: 10px;
+      right: 10px;
+      top: 0;
+    }
+    .nav li a {
+      display: block;
+      padding: 10px;
+      color: #fff;
+      text-decoration: none;
+      position: relative;
+      font-family: "Noto Sans TC", sans-serif;
+    }
+    .nav li:hover > a {
+      background-color: rgba(0, 0, 0, 0.2);
+    }
+    .nav li a .fa {
+      width: 1.2em;
+      margin-right: -1.2em;
+      transform: scale(0);
+      transition: 0.3s;
+    }
+    .nav li:hover .fa {
+      margin-right: 0em;
+      transform: scale(1);
+    }
+    #side-menu-switch {
+      position: absolute;
+      opacity: 0;
+      z-index: -1;
+    }
+    #side-menu-switch:checked + .side-menu {
+      transform: translateX(0);
+    }
+    #side-menu-switch:checked + .side-menu label .fa {
+      transform: scale(-1);
+    }
+  </style>
+  <body>
+    <input type="checkbox" name="side-menu-switch" id="side-menu-switch" />
+    <div class="side-menu">
+      <form>
+        <input type="search" placeholder="請輸入關鍵字" />
+        <button><i class="fa fa-search"></i></button>
+      </form>
+      <ul class="nav">
+        <li>
+          <a href="#"><i class="fa fa-users"></i>使用者</a>
+          <ul>
+            <li>
+              <a href="#">小花</a>
+              <ul>
+                <li><a href="#">DAY 1</a></li>
+                <li><a href="#">DAY 2</a></li>
+                <li><a href="#">DAY 3</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#">小草</a>
+              <ul>
+                <li><a href="#">DAY 1</a></li>
+                <li><a href="#">DAY 2</a></li>
+                <li><a href="#">DAY 3</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#">小綠</a>
+              <ul>
+                <li><a href="#">DAY 1</a></li>
+                <li><a href="#">DAY 2</a></li>
+                <li><a href="#">DAY 3</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="#"><i class="fa fa-globe"></i>網頁</a>
+        </li>
+        <li>
+          <a href="#"><i class="fa fa-cutlery"></i>切版</a>
+        </li>
+      </ul>
+      <label for="side-menu-switch">
+        <i class="fa fa-angles-right"></i>
+      </label>
+    </div>
+  </body>
+</html>
