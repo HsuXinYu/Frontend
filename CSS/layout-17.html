@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Noto+Sans+TC:100,300,400,500,700,900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+      html,
+      body {
+        height: 100%;
+      }
+      body {
+        background: url(../images/002.JPG) no-repeat center center / cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .login {
+        width: 600px;
+        height: 400px;
+        border-radius: 10px;
+        border: 10px solid #fff;
+        background-color: rgba(0, 0, 0, 0.5);
+        box-shadow: 0 0 50px #000;
+        backdrop-filter: blur(2px);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .form {
+        font-family: "Noto Sans TC", sans-serif;
+        width: 400px;
+        color: #fff;
+      }
+      .form h2 {
+        margin-bottom: 20px;
+        border-bottom: 1px solid #fff;
+      }
+      .form .input_group {
+        margin-bottom: 20px;
+      }
+      .form label {
+        line-height: 2;
+      }
+      .form input {
+        width: 100%;
+        border-radius: 5px;
+        border: 2px solid #fff;
+        line-height: 2;
+      }
+      .form .btn_group {
+        font-size: 0;
+        margin-top: 40px;
+      }
+      .form button {
+        background-color: #398bb7;
+        width: 190px;
+        color: #fff;
+        font-size: 20px;
+        border: none;
+        border-radius: 5px;
+        padding: 5px 0;
+        font-family: "Noto Sans TC", sans-serif;
+      }
+      .form button + button {
+        margin-left: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="login">
+      <form class="form">
+        <h2>會員登入</h2>
+        <div class="input_group">
+          <label for="user">帳號</label>
+          <input id="user" name="" type="text" />
+        </div>
+        <div class="input_group">
+          <label for="password">密碼</label>
+          <input id="password" name="" type="text" />
+        </div>
+        <div class="btn_group">
+          <button>登入</button>
+          <button>取消</button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
