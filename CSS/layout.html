@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>切版</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        font-family: 'Noto Sans', sans-serif;
+      }
+      html,
+      body {
+        height: 100%;
+      }
+      body {
+        background-color: #dcccbc;
+      }
+      .container {
+        display: flex;
+        flex-direction: row;
+        position: relative;
+        overflow: hidden;
+      }
+      .side-menu {
+        z-index: 1;
+        position: fixed;
+        width: 345px;
+        height: 100vh;
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+      }
+      .menu {
+        display: none;
+      }
+      .menu-title {
+        margin: 76px 0;
+        text-align: center;
+        font-weight: 700;
+        font-size: 30px;
+        line-height: 41px;
+      }
+      li {
+        margin: 20px 0;
+        text-align: center;
+      }
+      .link {
+        text-decoration: none;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 24px;
+        color: #000000;
+      }
+      .selected {
+        font-weight: 700;
+        color: #aa6666;
+        text-decoration: 2px solid #aa6666 underline;
+      }
+      .logo {
+        position: absolute;
+        top: 44px;
+        right: -48px;
+        width: 96px;
+        height: 96px;
+        border-radius: 50%;
+        background-color: #ffffff;
+        box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.25);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .main {
+        width: 100%;
+      }
+      .banner {
+        position: relative;
+      }
+      .mask img {
+        position: absolute;
+        top: -233px;
+        left: -281px;
+        width: 2034px;
+        height: 1110px;
+        object-fit: cover;
+      }
+      .mask {
+        height: 100vh;
+        -webkit-mask-image: radial-gradient(black 50%, rgba(0, 0, 0, 0.1) 50%);
+        mask-image: radial-gradient(black 50%, rgba(0, 0, 0, 0.1));
+        -webkit-mask-repeat: no-repeat;
+        mask-repeat: no-repeat;
+      }
+      .bannar-text {
+        position: absolute;
+        top: 504px;
+        right: 44px;
+      }
+      .bannar-title {
+        font-weight: 700;
+        font-size: 48px;
+        line-height: 64px;
+        color: #ffffff;
+        text-align: end;
+      }
+      .bannar-description {
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 24px;
+        color: #ffffff;
+        text-align: end;
+      }
+      .content {
+        margin: 56px 50px 56px 395px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 70px;
+      }
+      .content-text {
+        position: relative;
+        display: flex;
+        padding: 5px;
+      }
+      .content-title {
+        margin-right: 37.84px;
+        writing-mode: vertical-rl;
+        font-weight: 700;
+        font-size: 36px;
+        line-height: 40px;
+      }
+      .content-description {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 20px;
+      }
+      .content-decoration {
+        position: absolute;
+        top: 66px;
+        left: 32px;
+        width: 9px;
+        height: 9px;
+        border-radius: 50%;
+        border: 8px solid rgba(170, 102, 102, 0.6);
+      }
+      /* 平板 */
+      @media (max-width: 996px) {
+      }
+      /* 手機 */
+      @media (max-width: 376px) {
+        .container {
+          display: block;
+        }
+        .side-menu {
+          display: none;
+        }
+        .menu {
+          display: block;
+          height: 100%;
+          background-color: white;
+          position: relative;
+          padding: 10px;
+        }
+        .hamburger {
+          position: absolute;
+          top: 36px;
+          left: 20px;
+        }
+        .menu-title {
+          margin: 20px auto;
+          font-weight: 700;
+          font-size: 20px;
+          line-height: 28px;
+        }
+        li:first-child {
+          margin-top: 45px;
+        }
+        li:last-child {
+          margin-bottom: 45px;
+        }
+        .logo {
+          position: absolute;
+          top: 24px;
+          right: 20px;
+          width: 48px;
+          height: 48px;
+        }
+        .mask img {
+          position: absolute;
+          top: -115px;
+          left: -214px;
+          width: 696px;
+          height: 545px;
+        }
+        .mask {
+          height: 332px;
+          -webkit-mask-image: radial-gradient(
+            black 50%,
+            rgba(0, 0, 0, 0.1) 50%
+          );
+          mask-image: radial-gradient(black 50%, rgba(0, 0, 0, 0.1));
+          -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+        }
+        .bannar-text {
+          top: 78px;
+          right: 24px;
+        }
+        .bannar-title {
+          line-height: 50px;
+          margin-bottom: 10px;
+        }
+        .bannar-description {
+          margin: 0px 12px;
+        }
+        .content {
+          grid-template-columns: repeat(1, 1fr);
+          margin: auto;
+          padding: 25px 36px;
+        }
+        .content-text {
+          margin: 25px 0px;
+          display: flex;
+          padding: 5px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app" class="container">
+      <!-- 桌機導覽列 -->
+      <div class="side-menu">
+        <p class="menu-title">{{menu.title}}</p>
+        <ul>
+          <li v-for="(menu,index) in menu.content" :key="menu">
+            <span>
+              <a
+                href="#"
+                class="link"
+                :class="{ selected: isSelected(index) }"
+                @click="select(index)"
+                >{{menu}}</a
+              >
+            </span>
+          </li>
+        </ul>
+        <svg
+          class="logo"
+          width="76"
+          height="68"
+          viewBox="0 0 76 68"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+        >
+          <rect
+            x="0.0192566"
+            y="0.345795"
+            width="75.9615"
+            height="66.9661"
+            fill="url(#pattern0)"
+          />
+          <defs>
+            <pattern
+              id="pattern0"
+              patternContentUnits="objectBoundingBox"
+              width="1"
+              height="1"
+            >
+              <use
+                xlink:href="#image0_1_18"
+                transform="scale(0.0131579 0.0149254)"
+              />
+            </pattern>
+            <image
+              id="image0_1_18"
+              width="76"
+              height="67"
+              xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEwAAABDCAYAAAA2weP+AAAFoElEQVR4Ae2a+StlYRjH538yZIwlyVKMiJos0dhCGvyACL/IUkgzmGlikJKQLTGyJCF7IfODlCzZxr5mf6bvqaN7r+ve877n3HuP23nqdO655znnfd7Ped7ted53pAkTgXdM2poyacAYnUADpgFjJMCornmYBoyRAKO65mEaMEYCjOqah2nAGAkwqqvWwzY3N+nv3780MzNDIyMj1NvbS62trVRfX0+/f/+mpqYm6urqooGBAVpcXKSLiwvGqvOpqwbYyckJdXd3U2ZmJrm7u5ODgwPzERISQg0NDXR1dcVHQ8JTNgUGr6irq6OoqChmOKaAurm50c+fPyVUn13FJsCOjo7o+/fv5OrqqigoQ4ihoaG0trbGTsXEE1YFdnh4SKWlpfThwweLgjIEhz5QKbEasLa2NquDEsE5OzvT5OSkIswsDuzs7IxSU1Ot6lEiKN0z+rX9/X3Z0CwKbHZ2lnx9fW0OSwSXlJSkXmCVlZWqASUCwxlzNzliEQ8rKiqSBcvLy4tiY2MpIyODCgsL6cePH8JEta+vjyYmJmh6eprGxsZocHCQenp6hAltY2Mj/fr1i7KyssjHx+fV8v38/OTwUj5EjYmj7hc19/vLly9UXFxMzc3NAgj0M3d3d7KP9fV16uzspPz8/Bfdwr9//7ihKeph/f39kmBhEOjo6CBMM5SAI+Ud4+PjlJaWJti3sLBge2AYth0dHV8FlpiYKKz7MGpKqaCldNCk0Zx5RREPg6dg2DbW/KKjo2lqasqmkAzhY1GPpo9mu7W1RfiIUkURYOhoDWGFhYXR6OioqkAlJCRQQEDAC1thOwaar1+/Cn0plm6viWxgc3NzegagWdbW1tLt7a2qYMHLSkpK9Gw1/Mi61xUVFfTw8PCCmyxggPLp06dnIzCcY8g3bAJquUY8TReKud/oTk5PT/WgyQJWXV39bEBcXBzt7u6qFhY+2vz8/LO95mCJ9xGf0xVuYPf39+Ti4iIYgCXH9fW1xWGtrKxQQUEBRUZGUkREBCUnJ1NLS4vkcuEtIgiWM6K/onADGx4eFgr//PkzIVpq6WaHqYCTk5PRCmdnZ0suPzAw0Og7ABD9Lwar3NxcIXKLMnd2dkRWwpkbGIzEyLK9vS3ZWDlQEQw05RXt7e2S7BAnrxgt09PTqaqqiv78+UOrq6v09PSkB8fYBRewm5sb8vT0FPoEORCkPru8vGwSFkCi8lLehwjK8fGxMRaS/uMCNjQ0JNlAKZUwp4OJrynvwr34+HhJwFAW+l9e4QJWVlZG+OrmKqrUfaTazAHD0ktqeVYHhjCKVOOU0MOgYg7Yt2/fJNtkdWBInioBguUdpgKS3t7ewmgm9X1Y+/IKV5NcWlqyOjDAQCDRMOMUExMjZL6lwoIe5nO8wgzs8fGRzs/PbQIMlcUEGf0nPhqiDSygoIsRHjN+XmEGhvbPaqSa9LGetGoAESt4NQFgseXy8pLQ3x0cHPA6GHtMH02SxUi16O7t7VFwcDAFBQVxw8KDzE3yLQITYWFqUlNTowF7zYs3NjYoJyeH3r9//zyP04088JCzOw/D3jDME5GZMoxu5OXl8TDSe8ZugGEXIvKbCAoYWxV8/PhRCEPp1Z7j4s0BQ3+EHCMSxohbmQv7iPCQGVdCmIGhv0hJSRGiA4gQWPpAdBUjG/IFYoRXhCD1jIU5BislhAuYVEPVoBceHi6sDpSAhXfYNTB/f/8XWR+54OwWGGLzCJ8rLXYJDAlb5EwtIczAsJZUQ99kzAbs71ByA7Ax4HYBDDGy8vJyMrUnwljlef5708A8PDyE/RJyNsixQntzwLCXA96ETTDGNouwAmDVZwaGAjAJtOaBBKuUJCtr5Xn0uYDxFGQvz2jAGL+kBkwDxkiAUV3zMA0YIwFGdc3DNGCMBBjVNQ/TgDESYFT/Dwwv4onq+gTfAAAAAElFTkSuQmCC"
+            />
+          </defs>
+        </svg>
+      </div>
+      <!-- 手機導覽列 -->
+      <div class="menu">
+        <a @click="toggleMenu">
+          <svg
+            width="25"
+            height="23"
+            viewBox="0 0 25 23"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            class="hamburger"
+            v-if="!showMenu"
+          >
+            <line
+              x1="0.379578"
+              y1="2.8696"
+              x2="24.3796"
+              y2="2.8696"
+              stroke="black"
+              stroke-width="4"
+            />
+            <line
+              x1="0.379578"
+              y1="20.8696"
+              x2="24.3796"
+              y2="20.8696"
+              stroke="black"
+              stroke-width="4"
+            />
+            <line
+              x1="0.379578"
+              y1="11.8696"
+              x2="15.6523"
+              y2="11.8696"
+              stroke="black"
+              stroke-width="4"
+            />
+          </svg>
+        </a>
+        <a @click="toggleMenu">
+          <svg
+            width="25"
+            height="23"
+            viewBox="0 0 25 23"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            class="hamburger"
+            v-if="showMenu"
+          >
+            <line
+              y1="-2"
+              x2="28.6924"
+              y2="-2"
+              transform="matrix(0.730323 0.683102 -0.702025 0.712152 0.379639 2.8696)"
+              stroke="black"
+              stroke-width="4"
+            />
+            <line
+              y1="-2"
+              x2="28.0896"
+              y2="-2"
+              transform="matrix(0.716329 -0.697763 0.716329 0.697763 3.2583 22.4695)"
+              stroke="black"
+              stroke-width="4"
+            />
+          </svg>
+        </a>
+        <p class="menu-title">{{menu.title}}</p>
+        <ul>
+          <span v-if="showMenu">
+            <li v-for="(menu,index) in menu.content" :key="menu">
+              <a
+                href="#"
+                class="link"
+                :class="{ selected: isSelected(index) }"
+                @click="select(index)"
+                >{{menu}}</a
+              >
+            </li>
+          </span>
+        </ul>
+        <svg
+          width="76"
+          height="68"
+          viewBox="0 0 76 68"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          class="logo"
+        >
+          <rect
+            x="0.0192566"
+            y="0.345795"
+            width="75.9615"
+            height="66.9661"
+            fill="url(#pattern1)"
+          />
+          <defs>
+            <pattern
+              id="pattern1"
+              patternContentUnits="objectBoundingBox"
+              width="1"
+              height="1"
+            >
+              <use
+                xlink:href="#image0_1_18"
+                transform="scale(0.0131579 0.0149254)"
+              />
+            </pattern>
+            <image
+              id="image0_1_18"
+              width="76"
+              height="67"
+              xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEwAAABDCAYAAAA2weP+AAAFoElEQVR4Ae2a+StlYRjH538yZIwlyVKMiJos0dhCGvyACL/IUkgzmGlikJKQLTGyJCF7IfODlCzZxr5mf6bvqaN7r+ve877n3HuP23nqdO655znnfd7Ped7ted53pAkTgXdM2poyacAYnUADpgFjJMCornmYBoyRAKO65mEaMEYCjOqah2nAGAkwqqvWwzY3N+nv3780MzNDIyMj1NvbS62trVRfX0+/f/+mpqYm6urqooGBAVpcXKSLiwvGqvOpqwbYyckJdXd3U2ZmJrm7u5ODgwPzERISQg0NDXR1dcVHQ8JTNgUGr6irq6OoqChmOKaAurm50c+fPyVUn13FJsCOjo7o+/fv5OrqqigoQ4ihoaG0trbGTsXEE1YFdnh4SKWlpfThwweLgjIEhz5QKbEasLa2NquDEsE5OzvT5OSkIswsDuzs7IxSU1Ot6lEiKN0z+rX9/X3Z0CwKbHZ2lnx9fW0OSwSXlJSkXmCVlZWqASUCwxlzNzliEQ8rKiqSBcvLy4tiY2MpIyODCgsL6cePH8JEta+vjyYmJmh6eprGxsZocHCQenp6hAltY2Mj/fr1i7KyssjHx+fV8v38/OTwUj5EjYmj7hc19/vLly9UXFxMzc3NAgj0M3d3d7KP9fV16uzspPz8/Bfdwr9//7ihKeph/f39kmBhEOjo6CBMM5SAI+Ud4+PjlJaWJti3sLBge2AYth0dHV8FlpiYKKz7MGpKqaCldNCk0Zx5RREPg6dg2DbW/KKjo2lqasqmkAzhY1GPpo9mu7W1RfiIUkURYOhoDWGFhYXR6OioqkAlJCRQQEDAC1thOwaar1+/Cn0plm6viWxgc3NzegagWdbW1tLt7a2qYMHLSkpK9Gw1/Mi61xUVFfTw8PCCmyxggPLp06dnIzCcY8g3bAJquUY8TReKud/oTk5PT/WgyQJWXV39bEBcXBzt7u6qFhY+2vz8/LO95mCJ9xGf0xVuYPf39+Ti4iIYgCXH9fW1xWGtrKxQQUEBRUZGUkREBCUnJ1NLS4vkcuEtIgiWM6K/onADGx4eFgr//PkzIVpq6WaHqYCTk5PRCmdnZ0suPzAw0Og7ABD9Lwar3NxcIXKLMnd2dkRWwpkbGIzEyLK9vS3ZWDlQEQw05RXt7e2S7BAnrxgt09PTqaqqiv78+UOrq6v09PSkB8fYBRewm5sb8vT0FPoEORCkPru8vGwSFkCi8lLehwjK8fGxMRaS/uMCNjQ0JNlAKZUwp4OJrynvwr34+HhJwFAW+l9e4QJWVlZG+OrmKqrUfaTazAHD0ktqeVYHhjCKVOOU0MOgYg7Yt2/fJNtkdWBInioBguUdpgKS3t7ewmgm9X1Y+/IKV5NcWlqyOjDAQCDRMOMUExMjZL6lwoIe5nO8wgzs8fGRzs/PbQIMlcUEGf0nPhqiDSygoIsRHjN+XmEGhvbPaqSa9LGetGoAESt4NQFgseXy8pLQ3x0cHPA6GHtMH02SxUi16O7t7VFwcDAFBQVxw8KDzE3yLQITYWFqUlNTowF7zYs3NjYoJyeH3r9//zyP04088JCzOw/D3jDME5GZMoxu5OXl8TDSe8ZugGEXIvKbCAoYWxV8/PhRCEPp1Z7j4s0BQ3+EHCMSxohbmQv7iPCQGVdCmIGhv0hJSRGiA4gQWPpAdBUjG/IFYoRXhCD1jIU5BislhAuYVEPVoBceHi6sDpSAhXfYNTB/f/8XWR+54OwWGGLzCJ8rLXYJDAlb5EwtIczAsJZUQ99kzAbs71ByA7Ax4HYBDDGy8vJyMrUnwljlef5708A8PDyE/RJyNsixQntzwLCXA96ETTDGNouwAmDVZwaGAjAJtOaBBKuUJCtr5Xn0uYDxFGQvz2jAGL+kBkwDxkiAUV3zMA0YIwFGdc3DNGCMBBjVNQ/TgDESYFT/Dwwv4onq+gTfAAAAAElFTkSuQmCC"
+            />
+          </defs>
+        </svg>
+      </div>
+
+      <!-- 內容 -->
+      <div class="main">
+        <div class="banner">
+          <div class="mask">
+            <img :src="bannar.image" />
+          </div>
+          <div class="bannar-text">
+            <p class="bannar-title">{{bannar.title}}</p>
+            <p class="bannar-description">{{ bannar.description}}</p>
+          </div>
+        </div>
+        <div class="content">
+          <div class="content-text" v-for="content in content" :key="content">
+            <p class="content-title">{{content.title}}</p>
+            <p class="content-description">{{content.description}}</p>
+            <div class="content-decoration"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Vue -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@3"></script>
+    <script>
+      const { createApp, ref, computed } = Vue
+      const app = createApp({
+        setup() {
+          const menu = ref({
+            title: '白頭翁不吃小米',
+            content: [
+              '白頭翁的特性',
+              '白頭翁的故事',
+              '白頭翁的美照',
+              '白頭翁的危機',
+            ],
+          })
+          const bannar = ref({
+            title: '白頭翁 (Chinese bulbul)',
+            description:
+              '又名白頭鵯。以果實、昆蟲為主食，無法消化小米、穀類。平均壽命約 8~10 年。',
+            image:
+              'https://firebasestorage.googleapis.com/v0/b/db-demo-502f2.appspot.com/o/banner%20%E7%B4%A0%E6%9D%90.png?alt=media&token=a7096508-01b5-47a1-a812-d8c76372467f',
+          })
+          const content = ref([
+            {
+              title: '外觀',
+              description:
+                '白頭鵯體長約17到22公分，額至頭頂純黑色而富有光澤，兩眼上方至後枕白色，形成一白色枕環。耳羽後部有一白斑，此白環與白斑在黑色的頭部均極為醒目，老鳥的枕羽(後頭部)更潔白，所以又叫「白頭翁」。',
+            },
+            {
+              title: '棲地',
+              description:
+                '白頭翁和麻雀、綠繡眼合稱「城市三寶」，常成群出現在平原區灌木叢、丘陵樹林地帶，以及校園、公園、庭院、行道中的各種高高的電線與樹上。',
+            },
+            {
+              title: '食性',
+              description:
+                '以果樹的漿果和種子為主食，並時常飛入果園偷吃果實，還會吃嫩葉嫩芽，尤其是胡蝶蘭的嫩葉嫩芽葉，偶爾啄食昆蟲。',
+            },
+          ])
+
+          const selected = ref(0)
+          const isSelected = (index) => {
+            return selected.value === index
+          }
+          const select = (index) => {
+            selected.value = index
+          }
+
+          const showMenu = ref(false)
+          const toggleMenu = () => {
+            showMenu.value = !showMenu.value
+          }
+
+          return {
+            menu,
+            bannar,
+            content,
+            selected,
+            isSelected,
+            select,
+            showMenu,
+            toggleMenu,
+          }
+        },
+      })
+
+      app.mount('#app')
+    </script>
+  </body>
+</html>
