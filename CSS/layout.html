@@ -85,6 +85,13 @@
       .banner {
         position: relative;
       }
+      .mask {
+        height: 100vh;
+        -webkit-mask-image: radial-gradient(black 50%, rgba(0, 0, 0, 0.1) 50%);
+        mask-image: radial-gradient(black 50%, rgba(0, 0, 0, 0.1));
+        -webkit-mask-repeat: no-repeat;
+        mask-repeat: no-repeat;
+      }
       .mask img {
         position: absolute;
         top: -233px;
@@ -93,26 +100,19 @@
         height: 1110px;
         object-fit: cover;
       }
-      .mask {
-        height: 100vh;
-        -webkit-mask-image: radial-gradient(black 50%, rgba(0, 0, 0, 0.1) 50%);
-        mask-image: radial-gradient(black 50%, rgba(0, 0, 0, 0.1));
-        -webkit-mask-repeat: no-repeat;
-        mask-repeat: no-repeat;
-      }
-      .bannar-text {
+      .banner-text {
         position: absolute;
-        top: 504px;
-        right: 44px;
+        right: 20px;
+        bottom: 20px;
       }
-      .bannar-title {
+      .banner-title {
         font-weight: 700;
         font-size: 48px;
         line-height: 64px;
         color: #ffffff;
         text-align: end;
       }
-      .bannar-description {
+      .banner-description {
         font-weight: 400;
         font-size: 18px;
         line-height: 24px;
@@ -151,11 +151,7 @@
         border-radius: 50%;
         border: 8px solid rgba(170, 102, 102, 0.6);
       }
-      /* 平板 */
-      @media (max-width: 996px) {
-      }
-      /* 手機 */
-      @media (max-width: 376px) {
+      @media (max-width: 1080px) {
         .container {
           display: block;
         }
@@ -200,25 +196,18 @@
           width: 696px;
           height: 545px;
         }
-        .mask {
-          height: 332px;
-          -webkit-mask-image: radial-gradient(
-            black 50%,
-            rgba(0, 0, 0, 0.1) 50%
-          );
-          mask-image: radial-gradient(black 50%, rgba(0, 0, 0, 0.1));
-          -webkit-mask-repeat: no-repeat;
-          mask-repeat: no-repeat;
+      }
+      /* 平板 */
+      @media (max-width: 768px) {
+        .mask img {
+          top: -320px;
+          left: -600px;
         }
-        .bannar-text {
-          top: 78px;
-          right: 24px;
-        }
-        .bannar-title {
+        .banner-title {
           line-height: 50px;
           margin-bottom: 10px;
         }
-        .bannar-description {
+        .banner-description {
           margin: 0px 12px;
         }
         .content {
@@ -228,8 +217,27 @@
         }
         .content-text {
           margin: 25px 0px;
-          display: flex;
-          padding: 5px;
+        }
+      }
+      /* 手機 */
+      @media (max-width: 376px) {
+        .hamburger {
+          top: 36px;
+        }
+        .logo {
+          top: 24px;
+        }
+        .mask {
+          height: 312px;
+        }
+        .mask img {
+          top: -115px;
+          left: -214px;
+          width: 696px;
+          height: 545px;
+        }
+        .banner-text {
+          right: 24px;
         }
       }
     </style>
@@ -411,11 +419,11 @@
       <div class="main">
         <div class="banner">
           <div class="mask">
-            <img :src="bannar.image" />
+            <img :src="banner.image" />
           </div>
-          <div class="bannar-text">
-            <p class="bannar-title">{{bannar.title}}</p>
-            <p class="bannar-description">{{ bannar.description}}</p>
+          <div class="banner-text">
+            <p class="banner-title">{{banner.title}}</p>
+            <p class="banner-description">{{ banner.description}}</p>
           </div>
         </div>
         <div class="content">
@@ -442,7 +450,7 @@
               '白頭翁的危機',
             ],
           })
-          const bannar = ref({
+          const banner = ref({
             title: '白頭翁 (Chinese bulbul)',
             description:
               '又名白頭鵯。以果實、昆蟲為主食，無法消化小米、穀類。平均壽命約 8~10 年。',
@@ -482,7 +490,7 @@
 
           return {
             menu,
-            bannar,
+            banner,
             content,
             selected,
             isSelected,
